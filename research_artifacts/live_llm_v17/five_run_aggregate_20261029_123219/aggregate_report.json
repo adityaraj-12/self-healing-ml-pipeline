@@ -1,0 +1,214 @@
+{
+  "source": "five completed V17 run summaries",
+  "included_runs": [
+    {
+      "folder": "full_01",
+      "run_id": "20261027_152449_354530",
+      "status": "completed"
+    },
+    {
+      "folder": "full_02_retry",
+      "run_id": "20261028_054813_350434",
+      "status": "completed"
+    },
+    {
+      "folder": "full_03_retry",
+      "run_id": "20261029_061556_199086",
+      "status": "completed"
+    },
+    {
+      "folder": "full_04",
+      "run_id": "20261029_063505_652566",
+      "status": "completed"
+    },
+    {
+      "folder": "full_05",
+      "run_id": "20261029_064409_501954",
+      "status": "completed"
+    }
+  ],
+  "capture_totals": {
+    "runs": 5,
+    "capture_records": 172,
+    "responses_received": 170,
+    "request_failed_records": 2,
+    "rate_limit_failed_interactions": 2,
+    "malformed_capture_lines": 0
+  },
+  "method_aggregate": [
+    {
+      "method": "rule_based_gated",
+      "completed_runs": 5,
+      "cases_across_runs": 160,
+      "recovered_across_runs": 120,
+      "overall_recovery_rate": 0.75,
+      "mean_run_recovery_rate": 0.75,
+      "run_recovery_sd_percentage_points": 0.0,
+      "eligible_cases_across_runs": 120,
+      "automatic_recoveries_among_eligible": 120,
+      "conditional_automatic_recovery_rate": 1.0,
+      "human_review_cases_across_runs": 40,
+      "candidate_generation_failures": 0,
+      "provider_rate_limit_failures": 0,
+      "operational_failure_cases": 0,
+      "mean_method_seconds_across_runs": 0.163678,
+      "mean_llm_generation_seconds_across_runs": null,
+      "mean_generation_plus_method_seconds_across_runs": null,
+      "validation_attempts_across_runs": 120,
+      "mean_validation_pass_rate": 1.0
+    },
+    {
+      "method": "llm_direct_isolated",
+      "completed_runs": 5,
+      "cases_across_runs": 160,
+      "recovered_across_runs": 120,
+      "overall_recovery_rate": 0.75,
+      "mean_run_recovery_rate": 0.75,
+      "run_recovery_sd_percentage_points": 0.0,
+      "eligible_cases_across_runs": 120,
+      "automatic_recoveries_among_eligible": 120,
+      "conditional_automatic_recovery_rate": 1.0,
+      "human_review_cases_across_runs": 40,
+      "candidate_generation_failures": 0,
+      "provider_rate_limit_failures": 0,
+      "operational_failure_cases": 0,
+      "mean_method_seconds_across_runs": 0.008745,
+      "mean_llm_generation_seconds_across_runs": 11.688486,
+      "mean_generation_plus_method_seconds_across_runs": 11.697232,
+      "validation_attempts_across_runs": 0,
+      "mean_validation_pass_rate": null
+    },
+    {
+      "method": "llm_validated",
+      "completed_runs": 5,
+      "cases_across_runs": 160,
+      "recovered_across_runs": 120,
+      "overall_recovery_rate": 0.75,
+      "mean_run_recovery_rate": 0.75,
+      "run_recovery_sd_percentage_points": 0.0,
+      "eligible_cases_across_runs": 120,
+      "automatic_recoveries_among_eligible": 120,
+      "conditional_automatic_recovery_rate": 1.0,
+      "human_review_cases_across_runs": 40,
+      "candidate_generation_failures": 0,
+      "provider_rate_limit_failures": 0,
+      "operational_failure_cases": 0,
+      "mean_method_seconds_across_runs": 0.079964,
+      "mean_llm_generation_seconds_across_runs": 11.688486,
+      "mean_generation_plus_method_seconds_across_runs": 11.768451,
+      "validation_attempts_across_runs": 120,
+      "mean_validation_pass_rate": 1.0
+    }
+  ],
+  "failure_family_aggregate": [
+    {
+      "method": "llm_direct_isolated",
+      "failure_type": "configuration_error",
+      "cases": 40,
+      "recovered": 40,
+      "human_review_cases": 0,
+      "operational_failure_cases": 0,
+      "overall_recovery_rate": 1.0
+    },
+    {
+      "method": "llm_validated",
+      "failure_type": "configuration_error",
+      "cases": 40,
+      "recovered": 40,
+      "human_review_cases": 0,
+      "operational_failure_cases": 0,
+      "overall_recovery_rate": 1.0
+    },
+    {
+      "method": "rule_based_gated",
+      "failure_type": "configuration_error",
+      "cases": 40,
+      "recovered": 40,
+      "human_review_cases": 0,
+      "operational_failure_cases": 0,
+      "overall_recovery_rate": 1.0
+    },
+    {
+      "method": "llm_direct_isolated",
+      "failure_type": "data_quality",
+      "cases": 40,
+      "recovered": 40,
+      "human_review_cases": 0,
+      "operational_failure_cases": 0,
+      "overall_recovery_rate": 1.0
+    },
+    {
+      "method": "llm_validated",
+      "failure_type": "data_quality",
+      "cases": 40,
+      "recovered": 40,
+      "human_review_cases": 0,
+      "operational_failure_cases": 0,
+      "overall_recovery_rate": 1.0
+    },
+    {
+      "method": "rule_based_gated",
+      "failure_type": "data_quality",
+      "cases": 40,
+      "recovered": 40,
+      "human_review_cases": 0,
+      "operational_failure_cases": 0,
+      "overall_recovery_rate": 1.0
+    },
+    {
+      "method": "llm_direct_isolated",
+      "failure_type": "dependency_error",
+      "cases": 40,
+      "recovered": 0,
+      "human_review_cases": 40,
+      "operational_failure_cases": 0,
+      "overall_recovery_rate": 0.0
+    },
+    {
+      "method": "llm_validated",
+      "failure_type": "dependency_error",
+      "cases": 40,
+      "recovered": 0,
+      "human_review_cases": 40,
+      "operational_failure_cases": 0,
+      "overall_recovery_rate": 0.0
+    },
+    {
+      "method": "rule_based_gated",
+      "failure_type": "dependency_error",
+      "cases": 40,
+      "recovered": 0,
+      "human_review_cases": 40,
+      "operational_failure_cases": 0,
+      "overall_recovery_rate": 0.0
+    },
+    {
+      "method": "llm_direct_isolated",
+      "failure_type": "schema_change",
+      "cases": 40,
+      "recovered": 40,
+      "human_review_cases": 0,
+      "operational_failure_cases": 0,
+      "overall_recovery_rate": 1.0
+    },
+    {
+      "method": "llm_validated",
+      "failure_type": "schema_change",
+      "cases": 40,
+      "recovered": 40,
+      "human_review_cases": 0,
+      "operational_failure_cases": 0,
+      "overall_recovery_rate": 1.0
+    },
+    {
+      "method": "rule_based_gated",
+      "failure_type": "schema_change",
+      "cases": 40,
+      "recovered": 40,
+      "human_review_cases": 0,
+      "operational_failure_cases": 0,
+      "overall_recovery_rate": 1.0
+    }
+  ],
+  "interpretation_limit": "Repeated runs of 32 fixed project-authored templates; not independent real-world incidents. Run-level SD describes variation across five repetitions of the same template set."
+}

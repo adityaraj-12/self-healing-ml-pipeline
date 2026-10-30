@@ -1,0 +1,1095 @@
+[15:24:49 UTC] [INFO] PREFLIGHT PASSED | SDK pin and provider configuration are present.
+[15:24:49 UTC] [INFO] RUN ID | 20261027_152449_354530
+[15:24:49 UTC] [INFO] MODEL | openai/gpt-oss-20b
+[15:24:49 UTC] [INFO] ENDPOINT | https://api.groq.com/openai/v1
+[15:24:49 UTC] [INFO] CAPTURE | /Volumes/PortableSSD/Learning/M. Tech/Paper 2/self-healing-ml-pipeline-v17-upgrade/self-healing-ml-pipeline/research_artifacts/live_llm_v17/full_01/llm_io.jsonl
+[15:24:49 UTC] [INFO] RAW RESULTS | /Volumes/PortableSSD/Learning/M. Tech/Paper 2/self-healing-ml-pipeline-v17-upgrade/self-healing-ml-pipeline/research_artifacts/live_llm_v17/full_01/repeated_trials_20261027_152449_354530.jsonl
+[15:24:49 UTC] [INFO] SUMMARY | /Volumes/PortableSSD/Learning/M. Tech/Paper 2/self-healing-ml-pipeline-v17-upgrade/self-healing-ml-pipeline/research_artifacts/live_llm_v17/full_01/repeated_trials_summary_20261027_152449_354530.json
+[15:24:49 UTC] [INFO] RUN START | pipeline fault injection -> incident -> RCA -> deterministic candidate -> LLM candidate -> direct/gated validation/recovery -> save results
+[15:24:49 UTC] [INFO] PLAN | templates=32 | repeats=1 | case executions=32 | expected method rows=96
+[15:24:49 UTC] [INFO] POLICY | dependency modifications require human review; the LLM never authorizes arbitrary code, shell commands, or package installation.
+[15:24:49 UTC] [INFO] CASE 1/32 | schema_01 | family=schema_change | repeat=1/1
+[15:24:49 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:24:50 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-E1610A36 | detected_family=schema_change | elapsed=0.804s
+[15:24:50 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:24:50 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=schema_rename:mean_radius->mean radius
+[15:24:50 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:24:50 UTC] [INFO] STEP 3/6 COMPLETE | action=rename_column | planning=0.000153s
+[15:24:50 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:24:54 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-674B4495 | action=rename_column | generation=4.044s
+[15:24:54 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:24:54 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:24:54 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.214982s
+[15:24:54 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:24:54 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.010554s
+[15:24:54 UTC] [INFO]   METHOD START | llm_validated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:24:54 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.102434s
+[15:24:54 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:24:54 UTC] [INFO] CASE COMPLETE | schema_01 | rows_saved=3 | elapsed=5.184s
+[15:24:54 UTC] [INFO] CASE 2/32 | schema_02 | family=schema_change | repeat=1/1
+[15:24:54 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:24:55 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-74894CC9 | detected_family=schema_change | elapsed=0.793s
+[15:24:55 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:24:55 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=schema_rename:mean_texture->mean texture
+[15:24:55 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:24:55 UTC] [INFO] STEP 3/6 COMPLETE | action=rename_column | planning=0.000113s
+[15:24:55 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:24:57 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-54BF7F0F | action=rename_column | generation=1.819s
+[15:24:57 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:24:57 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:24:57 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.212729s
+[15:24:57 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:24:57 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.01007s
+[15:24:57 UTC] [INFO]   METHOD START | llm_validated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:24:57 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.096188s
+[15:24:57 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:24:57 UTC] [INFO] CASE COMPLETE | schema_02 | rows_saved=3 | elapsed=2.940s
+[15:24:57 UTC] [INFO] CASE 3/32 | schema_03 | family=schema_change | repeat=1/1
+[15:24:57 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:24:58 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-253BF121 | detected_family=schema_change | elapsed=0.790s
+[15:24:58 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:24:58 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=schema_rename:mean_perimeter->mean perimeter
+[15:24:58 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:24:58 UTC] [INFO] STEP 3/6 COMPLETE | action=rename_column | planning=0.000108s
+[15:24:58 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:25:01 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-DC766581 | action=rename_column | generation=3.135s
+[15:25:01 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:25:01 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:25:01 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.214876s
+[15:25:01 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:25:01 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.010653s
+[15:25:01 UTC] [INFO]   METHOD START | llm_validated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:25:01 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.105552s
+[15:25:01 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:25:01 UTC] [INFO] CASE COMPLETE | schema_03 | rows_saved=3 | elapsed=4.265s
+[15:25:01 UTC] [INFO] CASE 4/32 | data_01 | family=data_quality | repeat=1/1
+[15:25:01 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:25:02 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-2BCB9ECC | detected_family=data_quality | elapsed=0.803s
+[15:25:02 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:25:02 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=missing_feature_values
+[15:25:02 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:25:02 UTC] [INFO] STEP 3/6 COMPLETE | action=impute_missing_values | planning=0.000082s
+[15:25:02 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:25:04 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-606ECB63 | action=impute_missing_values | generation=2.154s
+[15:25:04 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:25:04 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:25:04 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.221632s
+[15:25:04 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:25:04 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.01447s
+[15:25:04 UTC] [INFO]   METHOD START | llm_validated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:25:05 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.125916s
+[15:25:05 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:25:05 UTC] [INFO] CASE COMPLETE | data_01 | rows_saved=3 | elapsed=3.328s
+[15:25:05 UTC] [INFO] CASE 5/32 | data_02 | family=data_quality | repeat=1/1
+[15:25:05 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:25:05 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-03E77D16 | detected_family=data_quality | elapsed=0.792s
+[15:25:05 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:25:05 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=missing_feature_values
+[15:25:05 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:25:05 UTC] [INFO] STEP 3/6 COMPLETE | action=impute_missing_values | planning=0.000089s
+[15:25:05 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:25:10 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-02FDD02B | action=impute_missing_values | generation=4.675s
+[15:25:10 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:25:10 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:25:10 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.218662s
+[15:25:10 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:25:10 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.011053s
+[15:25:10 UTC] [INFO]   METHOD START | llm_validated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:25:10 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.113987s
+[15:25:10 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:25:10 UTC] [INFO] CASE COMPLETE | data_02 | rows_saved=3 | elapsed=5.818s
+[15:25:10 UTC] [INFO] CASE 6/32 | data_03 | family=data_quality | repeat=1/1
+[15:25:10 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:25:11 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-C6933D0E | detected_family=data_quality | elapsed=0.804s
+[15:25:11 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:25:11 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=missing_feature_values
+[15:25:11 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:25:11 UTC] [INFO] STEP 3/6 COMPLETE | action=impute_missing_values | planning=0.000093s
+[15:25:11 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:25:24 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-FF332DB8 | action=impute_missing_values | generation=13.131s
+[15:25:24 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:25:24 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:25:25 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.22141s
+[15:25:25 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:25:25 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.012265s
+[15:25:25 UTC] [INFO]   METHOD START | llm_validated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:25:25 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.110648s
+[15:25:25 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:25:25 UTC] [INFO] CASE COMPLETE | data_03 | rows_saved=3 | elapsed=14.288s
+[15:25:25 UTC] [INFO] CASE 7/32 | config_01 | family=configuration_error | repeat=1/1
+[15:25:25 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:25:26 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-1D52FB32 | detected_family=configuration_error | elapsed=0.882s
+[15:25:26 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:25:26 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=invalid_parameter:C
+[15:25:26 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:25:26 UTC] [INFO] STEP 3/6 COMPLETE | action=restore_configuration | planning=0.000083s
+[15:25:26 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:25:36 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-063096A4 | action=restore_configuration | generation=10.080s
+[15:25:36 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:25:36 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:25:36 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.218336s
+[15:25:36 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:25:36 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.009251s
+[15:25:36 UTC] [INFO]   METHOD START | llm_validated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:25:36 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.107358s
+[15:25:36 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:25:36 UTC] [INFO] CASE COMPLETE | config_01 | rows_saved=3 | elapsed=11.307s
+[15:25:36 UTC] [INFO] CASE 8/32 | config_02 | family=configuration_error | repeat=1/1
+[15:25:36 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:25:37 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-9B3C4CEB | detected_family=configuration_error | elapsed=0.803s
+[15:25:37 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:25:37 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=invalid_parameter:C
+[15:25:37 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:25:37 UTC] [INFO] STEP 3/6 COMPLETE | action=restore_configuration | planning=0.000099s
+[15:25:37 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:25:52 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-3444F410 | action=restore_configuration | generation=15.543s
+[15:25:52 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:25:52 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:25:53 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.214562s
+[15:25:53 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:25:53 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.010062s
+[15:25:53 UTC] [INFO]   METHOD START | llm_validated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:25:53 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.10794s
+[15:25:53 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:25:53 UTC] [INFO] CASE COMPLETE | config_02 | rows_saved=3 | elapsed=16.688s
+[15:25:53 UTC] [INFO] CASE 9/32 | config_03 | family=configuration_error | repeat=1/1
+[15:25:53 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:25:54 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-09A45A24 | detected_family=configuration_error | elapsed=0.849s
+[15:25:54 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:25:54 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=invalid_parameter:C
+[15:25:54 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:25:54 UTC] [INFO] STEP 3/6 COMPLETE | action=restore_configuration | planning=0.000092s
+[15:25:54 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+
+LLM candidate rejected on attempt 1:
+Reason: Rationale must be a string.
+Raw response omitted from console output; inspect the protected LLM capture log if enabled.
+LLM repair candidate validated structurally on attempt 2.
+[15:26:22 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-728E67F7 | action=restore_configuration | generation=28.812s
+[15:26:22 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:26:22 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:26:23 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.213405s
+[15:26:23 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:26:23 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.009639s
+[15:26:23 UTC] [INFO]   METHOD START | llm_validated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:26:23 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.105657s
+[15:26:23 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:26:23 UTC] [INFO] CASE COMPLETE | config_03 | rows_saved=3 | elapsed=29.998s
+[15:26:23 UTC] [INFO] CASE 10/32 | dependency_01 | family=dependency_error | repeat=1/1
+[15:26:23 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:26:24 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-EB7BBDB0 | detected_family=dependency_error | elapsed=0.882s
+[15:26:24 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:26:24 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=missing_module:fake_ml_dependency_a
+[15:26:24 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:26:24 UTC] [INFO] STEP 3/6 COMPLETE | action=verify_dependency | planning=0.000078s
+[15:26:24 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:26:35 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-95AE2B48 | action=verify_dependency | generation=11.536s
+[15:26:35 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:26:35 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=verify_dependency
+[15:26:35 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=needs_human_approval | duration=0.004086s
+[15:26:35 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=verify_dependency
+[15:26:35 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=needs_human_approval | duration=0.002204s
+[15:26:35 UTC] [INFO]   METHOD START | llm_validated | candidate_action=verify_dependency
+[15:26:35 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=needs_human_approval | duration=0.003058s
+[15:26:35 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:26:35 UTC] [INFO] CASE COMPLETE | dependency_01 | rows_saved=3 | elapsed=12.437s
+[15:26:35 UTC] [INFO] CASE 11/32 | dependency_02 | family=dependency_error | repeat=1/1
+[15:26:35 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:26:36 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-0D77F3A2 | detected_family=dependency_error | elapsed=0.848s
+[15:26:36 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:26:36 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=missing_module:fake_ml_dependency_b
+[15:26:36 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:26:36 UTC] [INFO] STEP 3/6 COMPLETE | action=verify_dependency | planning=0.000088s
+[15:26:36 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:26:50 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-D833455C | action=verify_dependency | generation=14.122s
+[15:26:50 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:26:50 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=verify_dependency
+[15:26:50 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=needs_human_approval | duration=0.004126s
+[15:26:50 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=verify_dependency
+[15:26:50 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=needs_human_approval | duration=0.002258s
+[15:26:50 UTC] [INFO]   METHOD START | llm_validated | candidate_action=verify_dependency
+[15:26:50 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=needs_human_approval | duration=0.004674s
+[15:26:50 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:26:50 UTC] [INFO] CASE COMPLETE | dependency_02 | rows_saved=3 | elapsed=14.998s
+[15:26:50 UTC] [INFO] CASE 12/32 | dependency_03 | family=dependency_error | repeat=1/1
+[15:26:50 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:26:51 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-D0DE2E96 | detected_family=dependency_error | elapsed=0.889s
+[15:26:51 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:26:51 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=missing_module:fake_ml_dependency_c
+[15:26:51 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:26:51 UTC] [INFO] STEP 3/6 COMPLETE | action=verify_dependency | planning=0.000087s
+[15:26:51 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:27:00 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-D42F0405 | action=verify_dependency | generation=9.403s
+[15:27:00 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:27:00 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=verify_dependency
+[15:27:00 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=needs_human_approval | duration=0.005581s
+[15:27:00 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=verify_dependency
+[15:27:00 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=needs_human_approval | duration=0.003231s
+[15:27:00 UTC] [INFO]   METHOD START | llm_validated | candidate_action=verify_dependency
+[15:27:00 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=needs_human_approval | duration=0.007036s
+[15:27:00 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:27:00 UTC] [INFO] CASE COMPLETE | dependency_03 | rows_saved=3 | elapsed=10.326s
+[15:27:00 UTC] [INFO] CASE 13/32 | schema_04 | family=schema_change | repeat=1/1
+[15:27:00 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:27:01 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-84402F56 | detected_family=schema_change | elapsed=0.827s
+[15:27:01 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:27:01 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=schema_rename:worst_radius->worst radius
+[15:27:01 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:27:01 UTC] [INFO] STEP 3/6 COMPLETE | action=rename_column | planning=0.000124s
+[15:27:01 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:27:14 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-0806AD22 | action=rename_column | generation=12.679s
+[15:27:14 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:27:14 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:27:14 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.217018s
+[15:27:14 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:27:14 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.010195s
+[15:27:14 UTC] [INFO]   METHOD START | llm_validated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:27:14 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.103538s
+[15:27:14 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:27:14 UTC] [INFO] CASE COMPLETE | schema_04 | rows_saved=3 | elapsed=13.850s
+[15:27:14 UTC] [INFO] CASE 14/32 | schema_05 | family=schema_change | repeat=1/1
+[15:27:14 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:27:15 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-8E0C9F2E | detected_family=schema_change | elapsed=0.836s
+[15:27:15 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:27:15 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=schema_rename:worst_texture->worst texture
+[15:27:15 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:27:15 UTC] [INFO] STEP 3/6 COMPLETE | action=rename_column | planning=0.000106s
+[15:27:15 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:27:27 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-6D6B4A17 | action=rename_column | generation=12.079s
+[15:27:27 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:27:27 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:27:27 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.210313s
+[15:27:27 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:27:27 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.01158s
+[15:27:27 UTC] [INFO]   METHOD START | llm_validated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:27:28 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.103688s
+[15:27:28 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:27:28 UTC] [INFO] CASE COMPLETE | schema_05 | rows_saved=3 | elapsed=13.250s
+[15:27:28 UTC] [INFO] CASE 15/32 | schema_06 | family=schema_change | repeat=1/1
+[15:27:28 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:27:28 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-0384193B | detected_family=schema_change | elapsed=0.795s
+[15:27:28 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:27:28 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=schema_rename:worst_perimeter->worst perimeter
+[15:27:28 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:27:28 UTC] [INFO] STEP 3/6 COMPLETE | action=rename_column | planning=0.000106s
+[15:27:28 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:27:38 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-9A0804AE | action=rename_column | generation=9.573s
+[15:27:38 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:27:38 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:27:38 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.206582s
+[15:27:38 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:27:38 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.011509s
+[15:27:38 UTC] [INFO]   METHOD START | llm_validated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:27:38 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.101588s
+[15:27:38 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:27:38 UTC] [INFO] CASE COMPLETE | schema_06 | rows_saved=3 | elapsed=10.697s
+[15:27:38 UTC] [INFO] CASE 16/32 | schema_07 | family=schema_change | repeat=1/1
+[15:27:38 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:27:39 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-E0DC9649 | detected_family=schema_change | elapsed=0.822s
+[15:27:39 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:27:39 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=schema_rename:worst_area->worst area
+[15:27:39 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:27:39 UTC] [INFO] STEP 3/6 COMPLETE | action=rename_column | planning=0.000097s
+[15:27:39 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:27:51 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-A47B8B67 | action=rename_column | generation=11.754s
+[15:27:51 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:27:51 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:27:51 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.216916s
+[15:27:51 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:27:51 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.009686s
+[15:27:51 UTC] [INFO]   METHOD START | llm_validated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:27:51 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.103598s
+[15:27:51 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:27:51 UTC] [INFO] CASE COMPLETE | schema_07 | rows_saved=3 | elapsed=12.915s
+[15:27:51 UTC] [INFO] CASE 17/32 | schema_08 | family=schema_change | repeat=1/1
+[15:27:51 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:27:52 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-01A85443 | detected_family=schema_change | elapsed=0.823s
+[15:27:52 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:27:52 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=schema_rename:mean_compactness->mean compactness
+[15:27:52 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:27:52 UTC] [INFO] STEP 3/6 COMPLETE | action=rename_column | planning=0.000112s
+[15:27:52 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:28:03 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-E61081CC | action=rename_column | generation=11.006s
+[15:28:03 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:28:03 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:28:03 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.210613s
+[15:28:03 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:28:03 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.011334s
+[15:28:03 UTC] [INFO]   METHOD START | llm_validated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:28:03 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.102221s
+[15:28:03 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:28:03 UTC] [INFO] CASE COMPLETE | schema_08 | rows_saved=3 | elapsed=12.162s
+[15:28:03 UTC] [INFO] CASE 18/32 | data_04 | family=data_quality | repeat=1/1
+[15:28:03 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:28:04 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-4E58F192 | detected_family=data_quality | elapsed=0.805s
+[15:28:04 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:28:04 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=missing_feature_values
+[15:28:04 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:28:04 UTC] [INFO] STEP 3/6 COMPLETE | action=impute_missing_values | planning=0.000089s
+[15:28:04 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:28:18 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-BC7F6189 | action=impute_missing_values | generation=14.217s
+[15:28:18 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:28:18 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:28:19 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.237293s
+[15:28:19 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:28:19 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.013079s
+[15:28:19 UTC] [INFO]   METHOD START | llm_validated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:28:19 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.110379s
+[15:28:19 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:28:19 UTC] [INFO] CASE COMPLETE | data_04 | rows_saved=3 | elapsed=15.391s
+[15:28:19 UTC] [INFO] CASE 19/32 | data_05 | family=data_quality | repeat=1/1
+[15:28:19 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:28:20 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-219AFBBC | detected_family=data_quality | elapsed=0.805s
+[15:28:20 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:28:20 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=missing_feature_values
+[15:28:20 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:28:20 UTC] [INFO] STEP 3/6 COMPLETE | action=impute_missing_values | planning=0.000089s
+[15:28:20 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:28:32 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-964919AE | action=impute_missing_values | generation=12.630s
+[15:28:32 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:28:32 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:28:32 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.223418s
+[15:28:32 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:28:32 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.013106s
+[15:28:32 UTC] [INFO]   METHOD START | llm_validated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:28:33 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.110526s
+[15:28:33 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:28:33 UTC] [INFO] CASE COMPLETE | data_05 | rows_saved=3 | elapsed=13.819s
+[15:28:33 UTC] [INFO] CASE 20/32 | data_06 | family=data_quality | repeat=1/1
+[15:28:33 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:28:33 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-BD5B59AC | detected_family=data_quality | elapsed=0.819s
+[15:28:33 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:28:33 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=missing_feature_values
+[15:28:33 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:28:33 UTC] [INFO] STEP 3/6 COMPLETE | action=impute_missing_values | planning=0.000087s
+[15:28:33 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:28:49 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-5A042AE1 | action=impute_missing_values | generation=15.154s
+[15:28:49 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:28:49 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:28:49 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.211909s
+[15:28:49 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:28:49 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.011805s
+[15:28:49 UTC] [INFO]   METHOD START | llm_validated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:28:49 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.107126s
+[15:28:49 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:28:49 UTC] [INFO] CASE COMPLETE | data_06 | rows_saved=3 | elapsed=16.314s
+[15:28:49 UTC] [INFO] CASE 21/32 | data_07 | family=data_quality | repeat=1/1
+[15:28:49 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:28:50 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-A87E1975 | detected_family=data_quality | elapsed=0.863s
+[15:28:50 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:28:50 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=missing_feature_values
+[15:28:50 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:28:50 UTC] [INFO] STEP 3/6 COMPLETE | action=impute_missing_values | planning=0.000093s
+[15:28:50 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:29:05 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-41C38C89 | action=impute_missing_values | generation=14.941s
+[15:29:05 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:29:05 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:29:05 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.220314s
+[15:29:05 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:29:05 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.011922s
+[15:29:05 UTC] [INFO]   METHOD START | llm_validated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:29:05 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.108263s
+[15:29:05 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:29:05 UTC] [INFO] CASE COMPLETE | data_07 | rows_saved=3 | elapsed=16.154s
+[15:29:05 UTC] [INFO] CASE 22/32 | data_08 | family=data_quality | repeat=1/1
+[15:29:05 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:29:06 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-FA8E6B42 | detected_family=data_quality | elapsed=0.838s
+[15:29:06 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:29:06 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=missing_feature_values
+[15:29:06 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:29:06 UTC] [INFO] STEP 3/6 COMPLETE | action=impute_missing_values | planning=0.000095s
+[15:29:06 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:29:19 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-AC132658 | action=impute_missing_values | generation=13.186s
+[15:29:19 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:29:19 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:29:19 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.228157s
+[15:29:19 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:29:19 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.012738s
+[15:29:19 UTC] [INFO]   METHOD START | llm_validated | candidate_action=impute_missing_values
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:29:19 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.110663s
+[15:29:19 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:29:19 UTC] [INFO] CASE COMPLETE | data_08 | rows_saved=3 | elapsed=14.384s
+[15:29:19 UTC] [INFO] CASE 23/32 | config_04 | family=configuration_error | repeat=1/1
+[15:29:19 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:29:20 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-4BD6E4A4 | detected_family=configuration_error | elapsed=0.795s
+[15:29:20 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:29:20 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=invalid_parameter:C
+[15:29:20 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:29:20 UTC] [INFO] STEP 3/6 COMPLETE | action=restore_configuration | planning=0.000097s
+[15:29:20 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:29:32 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-4CE594A6 | action=restore_configuration | generation=11.402s
+[15:29:32 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:29:32 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:29:32 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.218856s
+[15:29:32 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:29:32 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.012373s
+[15:29:32 UTC] [INFO]   METHOD START | llm_validated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:29:32 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.108452s
+[15:29:32 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:29:32 UTC] [INFO] CASE COMPLETE | config_04 | rows_saved=3 | elapsed=12.545s
+[15:29:32 UTC] [INFO] CASE 24/32 | config_05 | family=configuration_error | repeat=1/1
+[15:29:32 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:29:33 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-EB62120E | detected_family=configuration_error | elapsed=0.832s
+[15:29:33 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:29:33 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=invalid_parameter:max_iter
+[15:29:33 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:29:33 UTC] [INFO] STEP 3/6 COMPLETE | action=restore_configuration | planning=0.000094s
+[15:29:33 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:29:45 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-9869F1A6 | action=restore_configuration | generation=12.341s
+[15:29:45 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:29:45 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:29:45 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.222487s
+[15:29:45 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:29:45 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.011264s
+[15:29:45 UTC] [INFO]   METHOD START | llm_validated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:29:45 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.103095s
+[15:29:45 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:29:45 UTC] [INFO] CASE COMPLETE | config_05 | rows_saved=3 | elapsed=13.519s
+[15:29:45 UTC] [INFO] CASE 25/32 | config_06 | family=configuration_error | repeat=1/1
+[15:29:45 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:29:46 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-6843C274 | detected_family=configuration_error | elapsed=0.796s
+[15:29:46 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:29:46 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=invalid_parameter:max_iter
+[15:29:46 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:29:46 UTC] [INFO] STEP 3/6 COMPLETE | action=restore_configuration | planning=0.000092s
+[15:29:46 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:29:59 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-F36E324C | action=restore_configuration | generation=12.529s
+[15:29:59 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:29:59 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:29:59 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.208395s
+[15:29:59 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:29:59 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.01068s
+[15:29:59 UTC] [INFO]   METHOD START | llm_validated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:29:59 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.106203s
+[15:29:59 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:29:59 UTC] [INFO] CASE COMPLETE | config_06 | rows_saved=3 | elapsed=13.660s
+[15:29:59 UTC] [INFO] CASE 26/32 | config_07 | family=configuration_error | repeat=1/1
+[15:29:59 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:30:00 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-DC6CD1CB | detected_family=configuration_error | elapsed=0.794s
+[15:30:00 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:30:00 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=invalid_parameter:max_iter
+[15:30:00 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:30:00 UTC] [INFO] STEP 3/6 COMPLETE | action=restore_configuration | planning=0.000095s
+[15:30:00 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:30:11 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-B9C05671 | action=restore_configuration | generation=11.072s
+[15:30:11 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:30:11 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:30:11 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.21509s
+[15:30:11 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:30:11 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.009759s
+[15:30:11 UTC] [INFO]   METHOD START | llm_validated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:30:11 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.109137s
+[15:30:11 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:30:11 UTC] [INFO] CASE COMPLETE | config_07 | rows_saved=3 | elapsed=12.209s
+[15:30:11 UTC] [INFO] CASE 27/32 | config_08 | family=configuration_error | repeat=1/1
+[15:30:11 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:30:12 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-78865B21 | detected_family=configuration_error | elapsed=0.795s
+[15:30:12 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:30:12 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=invalid_parameter:max_iter
+[15:30:12 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:30:12 UTC] [INFO] STEP 3/6 COMPLETE | action=restore_configuration | planning=0.000093s
+[15:30:12 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:30:24 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-8EA749A8 | action=restore_configuration | generation=12.257s
+[15:30:24 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:30:24 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:30:25 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.211922s
+[15:30:25 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:30:25 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.009248s
+[15:30:25 UTC] [INFO]   METHOD START | llm_validated | candidate_action=restore_configuration
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:30:25 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.107141s
+[15:30:25 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:30:25 UTC] [INFO] CASE COMPLETE | config_08 | rows_saved=3 | elapsed=13.389s
+[15:30:25 UTC] [INFO] CASE 28/32 | dependency_04 | family=dependency_error | repeat=1/1
+[15:30:25 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:30:26 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-A71A85D1 | detected_family=dependency_error | elapsed=0.792s
+[15:30:26 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:30:26 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=missing_module:shadowed_runtime_alpha
+[15:30:26 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:30:26 UTC] [INFO] STEP 3/6 COMPLETE | action=verify_dependency | planning=0.000091s
+[15:30:26 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:30:37 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-EB7449A0 | action=verify_dependency | generation=11.317s
+[15:30:37 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:30:37 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=verify_dependency
+[15:30:37 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=needs_human_approval | duration=0.005986s
+[15:30:37 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=verify_dependency
+[15:30:37 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=needs_human_approval | duration=0.001844s
+[15:30:37 UTC] [INFO]   METHOD START | llm_validated | candidate_action=verify_dependency
+[15:30:37 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=needs_human_approval | duration=0.002977s
+[15:30:37 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:30:37 UTC] [INFO] CASE COMPLETE | dependency_04 | rows_saved=3 | elapsed=12.130s
+[15:30:37 UTC] [INFO] CASE 29/32 | dependency_05 | family=dependency_error | repeat=1/1
+[15:30:37 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:30:38 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-1628E215 | detected_family=dependency_error | elapsed=0.810s
+[15:30:38 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:30:38 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=missing_module:plugin_loader_beta
+[15:30:38 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:30:38 UTC] [INFO] STEP 3/6 COMPLETE | action=verify_dependency | planning=0.000085s
+[15:30:38 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:30:50 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-039254D7 | action=verify_dependency | generation=12.066s
+[15:30:50 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:30:50 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=verify_dependency
+[15:30:50 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=needs_human_approval | duration=0.006242s
+[15:30:50 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=verify_dependency
+[15:30:50 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=needs_human_approval | duration=0.002553s
+[15:30:50 UTC] [INFO]   METHOD START | llm_validated | candidate_action=verify_dependency
+[15:30:50 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=needs_human_approval | duration=0.003146s
+[15:30:50 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:30:50 UTC] [INFO] CASE COMPLETE | dependency_05 | rows_saved=3 | elapsed=12.901s
+[15:30:50 UTC] [INFO] CASE 30/32 | dependency_06 | family=dependency_error | repeat=1/1
+[15:30:50 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:30:51 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-5C34C455 | detected_family=dependency_error | elapsed=0.822s
+[15:30:51 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:30:51 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=missing_module:feature_store_gamma
+[15:30:51 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:30:51 UTC] [INFO] STEP 3/6 COMPLETE | action=verify_dependency | planning=0.000095s
+[15:30:51 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:31:08 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-A9623F1D | action=verify_dependency | generation=17.376s
+[15:31:08 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:31:08 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=verify_dependency
+[15:31:08 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=needs_human_approval | duration=0.004034s
+[15:31:08 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=verify_dependency
+[15:31:08 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=needs_human_approval | duration=0.002435s
+[15:31:08 UTC] [INFO]   METHOD START | llm_validated | candidate_action=verify_dependency
+[15:31:08 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=needs_human_approval | duration=0.003912s
+[15:31:08 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:31:08 UTC] [INFO] CASE COMPLETE | dependency_06 | rows_saved=3 | elapsed=18.225s
+[15:31:08 UTC] [INFO] CASE 31/32 | dependency_07 | family=dependency_error | repeat=1/1
+[15:31:08 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:31:09 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-CD474AC4 | detected_family=dependency_error | elapsed=0.869s
+[15:31:09 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:31:09 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=missing_module:isolated_test_delta
+[15:31:09 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:31:09 UTC] [INFO] STEP 3/6 COMPLETE | action=verify_dependency | planning=0.000094s
+[15:31:09 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:31:14 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-06E1967E | action=verify_dependency | generation=5.347s
+[15:31:14 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:31:14 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=verify_dependency
+[15:31:14 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=needs_human_approval | duration=0.004498s
+[15:31:14 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=verify_dependency
+[15:31:14 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=needs_human_approval | duration=0.002366s
+[15:31:14 UTC] [INFO]   METHOD START | llm_validated | candidate_action=verify_dependency
+[15:31:14 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=needs_human_approval | duration=0.004207s
+[15:31:14 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:31:14 UTC] [INFO] CASE COMPLETE | dependency_07 | rows_saved=3 | elapsed=6.248s
+[15:31:14 UTC] [INFO] CASE 32/32 | dependency_08 | family=dependency_error | repeat=1/1
+[15:31:14 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:31:15 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-3DB83FED | detected_family=dependency_error | elapsed=0.829s
+[15:31:15 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:31:15 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=missing_module:custom_backend_epsilon
+[15:31:15 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:31:15 UTC] [INFO] STEP 3/6 COMPLETE | action=verify_dependency | planning=0.000091s
+[15:31:15 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:31:45 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-D3561E6A | action=verify_dependency | generation=29.716s
+[15:31:45 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:31:45 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=verify_dependency
+[15:31:45 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=needs_human_approval | duration=0.004414s
+[15:31:45 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=verify_dependency
+[15:31:45 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=needs_human_approval | duration=0.002371s
+[15:31:45 UTC] [INFO]   METHOD START | llm_validated | candidate_action=verify_dependency
+[15:31:45 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=needs_human_approval | duration=0.003535s
+[15:31:45 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:31:45 UTC] [INFO] CASE COMPLETE | dependency_08 | rows_saved=3 | elapsed=30.574s
+[15:31:45 UTC] [INFO] RUN SUMMARY | {"capture_audit": {"capture_filename": "llm_io.jsonl", "first_interaction_utc": "2026-10-27T15:24:54.249269+00:00", "last_interaction_utc": "2026-10-27T15:31:45.308825+00:00", "malformed_jsonl_lines": 0, "rate_limit_failed_interactions": 0, "records": 33, "status_counts": {"response_received": 33}}, "capture_filename": "llm_io.jsonl", "case_execution_errors": 0, "completed_case_executions": 32, "completion_fraction": 1.0, "manifest_filename": "llm_run_manifest_20261027_152449_354530.json", "planned_case_executions": 32, "planned_trial_records": 96, "raw_results_filename": "repeated_trials_20261027_152449_354530.jsonl", "repeats_requested": 1, "run_id": "20261027_152449_354530", "run_status": "completed", "scenario_templates_requested": 32, "stop_reason": null, "written_trial_records": 96}
+[15:31:45 UTC] [INFO] METHOD SUMMARY | llm_direct_isolated | recovered=24/32 | overall=0.75 | eligible=24 | conditional_automatic_recovery=1.0 | human_review=8 | provider_rate_limit_failures=0
+[15:31:45 UTC] [INFO] METHOD SUMMARY | llm_validated | recovered=24/32 | overall=0.75 | eligible=24 | conditional_automatic_recovery=1.0 | human_review=8 | provider_rate_limit_failures=0
+[15:31:45 UTC] [INFO] METHOD SUMMARY | rule_based_gated | recovered=24/32 | overall=0.75 | eligible=24 | conditional_automatic_recovery=1.0 | human_review=8 | provider_rate_limit_failures=0
+[15:31:45 UTC] [INFO] RAW RESULTS SAVED | /Volumes/PortableSSD/Learning/M. Tech/Paper 2/self-healing-ml-pipeline-v17-upgrade/self-healing-ml-pipeline/research_artifacts/live_llm_v17/full_01/repeated_trials_20261027_152449_354530.jsonl
+[15:31:45 UTC] [INFO] SUMMARY SAVED | /Volumes/PortableSSD/Learning/M. Tech/Paper 2/self-healing-ml-pipeline-v17-upgrade/self-healing-ml-pipeline/research_artifacts/live_llm_v17/full_01/repeated_trials_summary_20261027_152449_354530.json
+[15:31:45 UTC] [INFO] MANIFEST SAVED | /Volumes/PortableSSD/Learning/M. Tech/Paper 2/self-healing-ml-pipeline-v17-upgrade/self-healing-ml-pipeline/research_artifacts/live_llm_v17/full_01/llm_run_manifest_20261027_152449_354530.json
+[15:31:45 UTC] [INFO] CAPTURE SAVED | /Volumes/PortableSSD/Learning/M. Tech/Paper 2/self-healing-ml-pipeline-v17-upgrade/self-healing-ml-pipeline/research_artifacts/live_llm_v17/full_01/llm_io.jsonl
+[15:31:45 UTC] [INFO] RUN COMPLETED | all planned case executions produced three method rows.

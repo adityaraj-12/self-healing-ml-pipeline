@@ -1,0 +1,108 @@
+{
+  "manifest_schema": "llm-run-manifest-v1",
+  "captured_at_utc": "2026-10-28T05:48:13.380146+00:00",
+  "scope": "current environment/source configuration; not a reconstruction of historical runs",
+  "status": "ready_to_attempt_live_run",
+  "missing_items": [],
+  "python_version": "3.13.15",
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "git_commit": null,
+  "git_branch": null,
+  "git_worktree_clean": null,
+  "critical_source_set_sha256": "2563e67d3ba5d8db726a853816af90ebf3098bba6b36e0f8b29cb40d3b0a34b6",
+  "provider_mode": "openai_compatible_custom_endpoint",
+  "model_identifier": "openai/gpt-oss-20b",
+  "api_key_present": true,
+  "llm_io_capture_enabled": true,
+  "endpoint_sanitized": "https://api.groq.com/openai/v1",
+  "sdk": {
+    "declared_requirement": "openai==3.20.0",
+    "installed_version": "3.20.0",
+    "matches_declared_pin": true
+  },
+  "request_settings_from_source": {
+    "repair_generation": {
+      "api_method": "chat.completions.create",
+      "temperature": 0,
+      "response_format": {
+        "type": "json_object"
+      },
+      "candidate_validation_attempts": 2,
+      "top_p": "not explicitly set; provider default",
+      "token_limit": "not explicitly set; provider default"
+    },
+    "llm_rca": {
+      "api_method": "chat.completions.create",
+      "temperature": 0,
+      "response_format": {
+        "type": "json_object"
+      },
+      "request_attempts": 1,
+      "top_p": "not explicitly set; provider default",
+      "token_limit": "not explicitly set; provider default"
+    }
+  },
+  "source_sha256": {
+    "healing/repair/llm_repair_generator.py": "e36ee5b5253a0734a35266460e9e47c07a275f7fa463a68ac771b32e18b53860",
+    "healing/rca/llm_rca.py": "b4e8815fcaeebbc02f09035bf13f866c71226472fb3f0e337654c262fa2eb7c1",
+    "healing/repair/repair_policy.py": "8d27454f9022f7f63565444e82c70b446272665a82d07086444d4f5c97dac72a",
+    "healing/validation/repair_validator.py": "f13a2f7a3681b923aafaaeb52401f09dd233a19e9e83e04876e98c2c735912db",
+    "benchmarks/repeated_trials.py": "91cda59329bcd69c749d9e87a0da8e7153e01620bfb01573328f1f827b830b1f",
+    "benchmarks/experiment_runtime.py": "23b6cf8ebc13b452f1c8be52b92f2e8cdb6a15351a68749f026a717bc71417d5",
+    "benchmarks/direct_llm_baseline.py": "2d9d12fb7a9bf611151ffb198ba87d5e6c37612a63836ba9fd9714ec1f13bd79",
+    "benchmarks/scenarios/trial_cases.yaml": "45a40b085f160671ac766e5cb27b6c8d9f956a8134478cc8bd27f34d6ebf32a3",
+    "pipeline/runner.py": "4cc61ccdf9f199beeaddfec426656041b69ae2fbf76510d0b391b5581170a9a7"
+  },
+  "security": {
+    "api_key_value_recorded": false,
+    "base_url_user_info_query_fragment_recorded": false,
+    "credential_like_path_segments_redacted": true
+  },
+  "historical_run_note": "Use this manifest alongside a newly executed run. It cannot identify the model or settings used in old results when the original environment and request logs were not preserved.",
+  "benchmark_settings": {
+    "runner": "benchmarks.repeated_trials",
+    "run_id": "20261028_054813_350434",
+    "repeats_requested": 1,
+    "scenario_count": 32,
+    "selected_case_ids": [
+      "schema_01",
+      "schema_02",
+      "schema_03",
+      "data_01",
+      "data_02",
+      "data_03",
+      "config_01",
+      "config_02",
+      "config_03",
+      "dependency_01",
+      "dependency_02",
+      "dependency_03",
+      "schema_04",
+      "schema_05",
+      "schema_06",
+      "schema_07",
+      "schema_08",
+      "data_04",
+      "data_05",
+      "data_06",
+      "data_07",
+      "data_08",
+      "config_04",
+      "config_05",
+      "config_06",
+      "config_07",
+      "config_08",
+      "dependency_04",
+      "dependency_05",
+      "dependency_06",
+      "dependency_07",
+      "dependency_08"
+    ],
+    "expected_trial_records": 96,
+    "max_rate_limit_attempts": 4,
+    "max_rate_limit_wait_seconds": 30.0,
+    "capture_filename": "llm_io.jsonl",
+    "raw_result_filename": "repeated_trials_20261028_054813_350434.jsonl",
+    "summary_filename": "repeated_trials_summary_20261028_054813_350434.json"
+  }
+}

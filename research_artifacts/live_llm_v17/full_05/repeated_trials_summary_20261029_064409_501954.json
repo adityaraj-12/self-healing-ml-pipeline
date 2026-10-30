@@ -1,0 +1,226 @@
+{
+  "generated_at": "2026-10-29T06:50:57.896245+00:00",
+  "total_cases": 32,
+  "trial_records": 96,
+  "methods": {
+    "llm_direct_isolated": {
+      "cases": 32,
+      "recovered": 24,
+      "overall_recovery_rate": 0.75,
+      "end_to_end_recovery_rate": 0.75,
+      "automatically_eligible_cases": 24,
+      "automatic_recovery_rate": 1.0,
+      "human_review_required": 8,
+      "candidate_generation_failed": 0,
+      "provider_rate_limit_failures": 0,
+      "operational_failure_cases": 0,
+      "status_counts": {
+        "needs_human_approval": 8,
+        "recovered": 24
+      },
+      "validation_attempts": 0,
+      "validation_pass_rate": null,
+      "mean_method_duration_seconds": 0.008521875,
+      "per_failure_type": {
+        "configuration_error": {
+          "cases": 8,
+          "recovered": 8,
+          "human_review_required": 0,
+          "operational_failures": 0,
+          "status_counts": {
+            "recovered": 8
+          }
+        },
+        "data_quality": {
+          "cases": 8,
+          "recovered": 8,
+          "human_review_required": 0,
+          "operational_failures": 0,
+          "status_counts": {
+            "recovered": 8
+          }
+        },
+        "dependency_error": {
+          "cases": 8,
+          "recovered": 0,
+          "human_review_required": 8,
+          "operational_failures": 0,
+          "status_counts": {
+            "needs_human_approval": 8
+          }
+        },
+        "schema_change": {
+          "cases": 8,
+          "recovered": 8,
+          "human_review_required": 0,
+          "operational_failures": 0,
+          "status_counts": {
+            "recovered": 8
+          }
+        }
+      },
+      "mean_llm_generation_seconds": 11.681247,
+      "mean_generation_plus_method_seconds": 11.689769,
+      "generation_timed_cases": 32,
+      "generation_plus_method_timed_cases": 32,
+      "mean_generation_seconds_for_valid_candidates": 11.681247,
+      "valid_candidate_generation_timed_cases": 32
+    },
+    "llm_validated": {
+      "cases": 32,
+      "recovered": 24,
+      "overall_recovery_rate": 0.75,
+      "end_to_end_recovery_rate": 0.75,
+      "automatically_eligible_cases": 24,
+      "automatic_recovery_rate": 1.0,
+      "human_review_required": 8,
+      "candidate_generation_failed": 0,
+      "provider_rate_limit_failures": 0,
+      "operational_failure_cases": 0,
+      "status_counts": {
+        "needs_human_approval": 8,
+        "recovered": 24
+      },
+      "validation_attempts": 24,
+      "validation_pass_rate": 1.0,
+      "mean_method_duration_seconds": 0.07895671875,
+      "per_failure_type": {
+        "configuration_error": {
+          "cases": 8,
+          "recovered": 8,
+          "human_review_required": 0,
+          "operational_failures": 0,
+          "status_counts": {
+            "recovered": 8
+          }
+        },
+        "data_quality": {
+          "cases": 8,
+          "recovered": 8,
+          "human_review_required": 0,
+          "operational_failures": 0,
+          "status_counts": {
+            "recovered": 8
+          }
+        },
+        "dependency_error": {
+          "cases": 8,
+          "recovered": 0,
+          "human_review_required": 8,
+          "operational_failures": 0,
+          "status_counts": {
+            "needs_human_approval": 8
+          }
+        },
+        "schema_change": {
+          "cases": 8,
+          "recovered": 8,
+          "human_review_required": 0,
+          "operational_failures": 0,
+          "status_counts": {
+            "recovered": 8
+          }
+        }
+      },
+      "mean_llm_generation_seconds": 11.681247,
+      "mean_generation_plus_method_seconds": 11.760203,
+      "generation_timed_cases": 32,
+      "generation_plus_method_timed_cases": 32,
+      "mean_generation_seconds_for_valid_candidates": 11.681247,
+      "valid_candidate_generation_timed_cases": 32
+    },
+    "rule_based_gated": {
+      "cases": 32,
+      "recovered": 24,
+      "overall_recovery_rate": 0.75,
+      "end_to_end_recovery_rate": 0.75,
+      "automatically_eligible_cases": 24,
+      "automatic_recovery_rate": 1.0,
+      "human_review_required": 8,
+      "candidate_generation_failed": 0,
+      "provider_rate_limit_failures": 0,
+      "operational_failure_cases": 0,
+      "status_counts": {
+        "needs_human_approval": 8,
+        "recovered": 24
+      },
+      "validation_attempts": 24,
+      "validation_pass_rate": 1.0,
+      "mean_method_duration_seconds": 0.16251671875,
+      "per_failure_type": {
+        "configuration_error": {
+          "cases": 8,
+          "recovered": 8,
+          "human_review_required": 0,
+          "operational_failures": 0,
+          "status_counts": {
+            "recovered": 8
+          }
+        },
+        "data_quality": {
+          "cases": 8,
+          "recovered": 8,
+          "human_review_required": 0,
+          "operational_failures": 0,
+          "status_counts": {
+            "recovered": 8
+          }
+        },
+        "dependency_error": {
+          "cases": 8,
+          "recovered": 0,
+          "human_review_required": 8,
+          "operational_failures": 0,
+          "status_counts": {
+            "needs_human_approval": 8
+          }
+        },
+        "schema_change": {
+          "cases": 8,
+          "recovered": 8,
+          "human_review_required": 0,
+          "operational_failures": 0,
+          "status_counts": {
+            "recovered": 8
+          }
+        }
+      },
+      "mean_repair_planning_seconds": 9.6e-05,
+      "mean_planning_plus_method_seconds": 0.162612
+    }
+  },
+  "interpretation_note": "Overall recovery rate uses all recorded method rows as its denominator. Conditional automatic recovery excludes human-review cases and recorded operational/generation failures. Scenario repeats are repeated observations of fixed project-authored templates, not independent real-world incidents.",
+  "diagnosis_evaluation": {
+    "evaluated_cases": 32,
+    "correct": 32,
+    "accuracy": 1.0
+  },
+  "run_metadata": {
+    "run_id": "20261029_064409_501954",
+    "run_status": "completed",
+    "stop_reason": null,
+    "repeats_requested": 1,
+    "scenario_templates_requested": 32,
+    "planned_case_executions": 32,
+    "completed_case_executions": 32,
+    "planned_trial_records": 96,
+    "written_trial_records": 96,
+    "completion_fraction": 1.0,
+    "case_execution_errors": 0,
+    "capture_filename": "llm_io.jsonl",
+    "raw_results_filename": "repeated_trials_20261029_064409_501954.jsonl",
+    "manifest_filename": "llm_run_manifest_20261029_064409_501954.json",
+    "capture_audit": {
+      "capture_filename": "llm_io.jsonl",
+      "records": 35,
+      "malformed_jsonl_lines": 0,
+      "status_counts": {
+        "response_received": 35
+      },
+      "rate_limit_failed_interactions": 0,
+      "first_interaction_utc": "2026-10-29T06:44:11.873160+00:00",
+      "last_interaction_utc": "2026-10-29T06:50:57.878443+00:00"
+    }
+  },
+  "llm_run_manifest": "llm_run_manifest_20261029_064409_501954.json"
+}

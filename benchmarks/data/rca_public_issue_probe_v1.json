@@ -1,0 +1,151 @@
+{
+  "dataset_id": "rca_public_issue_probe_v1",
+  "created_at": "2026-10-23",
+  "status": "curated_external_source_probe",
+  "rule_implementation_sha256": "00a0dc340102408c5a2dc0ff430c25691795f9b551197eefee49caf3131a6164",
+  "selection_protocol": "Short error excerpts were taken from public issue reports and official project source/documentation. Labels were assigned manually after selecting the sources and after the RCA implementation already existed. The set is external-source-derived but not blind, preregistered, or independently labelled.",
+  "scope": "Tests rule-based subcode prediction conditional on a supplied coarse failure_type. Does not test the incident detector's selection of failure_type.",
+  "limitations": [
+    "Cases were curated after the rule implementation existed, so this is not a blind external evaluation.",
+    "Several cases are correlated by repository or error family and must not be treated as independent real-world failures.",
+    "The labels are manual, and ambiguous cases were excluded.",
+    "The set uses public issue reports and official source snippets; it is not a representative sample of ML production incidents."
+  ],
+  "cases": [
+    {
+      "case_id": "pycaret_feature_names_fit_mismatch",
+      "source_kind": "public_issue",
+      "source_url": "https://github.com/pycaret/pycaret/issues/4051",
+      "source_note": "PyCaret issue describing feature names differing between fit and transform.",
+      "failure_type": "schema_change",
+      "error_message": "ValueError: The feature names should match those that were passed during fit.",
+      "expected_root_cause_code": "schema_mismatch"
+    },
+    {
+      "case_id": "napari_feature_order_mismatch",
+      "source_kind": "public_issue",
+      "source_url": "https://github.com/fractal-napari-plugins-collection/napari-feature-classifier/issues/44",
+      "source_note": "Issue reports feature-column order mismatch during classifier prediction.",
+      "failure_type": "schema_change",
+      "error_message": "The feature names should match those that were passed during fit. Feature names must be in the same order as they were in fit.",
+      "expected_root_cause_code": "schema_mismatch"
+    },
+    {
+      "case_id": "lightgbm_feature_name_mismatch",
+      "source_kind": "public_issue",
+      "source_url": "https://github.com/lightgbm-org/LightGBM/issues/7338",
+      "source_note": "Issue describes feature-name incompatibility with a scikit-learn pipeline.",
+      "failure_type": "schema_change",
+      "error_message": "ValueError: The feature names should match those that were passed during fit.",
+      "expected_root_cause_code": "schema_mismatch"
+    },
+    {
+      "case_id": "pybroker_feature_order_issue",
+      "source_kind": "public_issue",
+      "source_url": "https://github.com/edtechre/pybroker/issues/116",
+      "source_note": "Issue title and report describe prediction-time feature ordering differing from training.",
+      "failure_type": "schema_change",
+      "error_message": "The feature names should match those that were passed during fit.",
+      "expected_root_cause_code": "schema_mismatch"
+    },
+    {
+      "case_id": "sklearn_nan_decision_tree",
+      "source_kind": "public_issue",
+      "source_url": "https://github.com/scikit-learn/scikit-learn/issues/28587",
+      "source_note": "Issue reports a DecisionTreeClassifier failing when X contains NaN.",
+      "failure_type": "data_quality",
+      "error_message": "ValueError: Input X contains NaN. DecisionTreeClassifier does not accept missing values encoded as NaN natively.",
+      "expected_root_cause_code": "missing_feature_values"
+    },
+    {
+      "case_id": "sklearn_imputer_string_conversion",
+      "source_kind": "public_issue",
+      "source_url": "https://github.com/scikit-learn/scikit-learn/issues/27530",
+      "source_note": "Issue reports conversion failure on string-valued data during imputation.",
+      "failure_type": "data_quality",
+      "error_message": "ValueError: could not convert string to float: '<35'",
+      "expected_root_cause_code": "invalid_feature_types"
+    },
+    {
+      "case_id": "sklearn_column_transformer_string_conversion",
+      "source_kind": "public_issue",
+      "source_url": "https://github.com/scikit-learn/scikit-learn/issues/28429",
+      "source_note": "Issue reports conversion failure for a categorical feature in a preprocessing pipeline.",
+      "failure_type": "data_quality",
+      "error_message": "ValueError: could not convert string to float: 'High School'",
+      "expected_root_cause_code": "invalid_feature_types"
+    },
+    {
+      "case_id": "sklearn_self_training_string_conversion",
+      "source_kind": "public_issue",
+      "source_url": "https://github.com/scikit-learn/scikit-learn/issues/23323",
+      "source_note": "Issue traceback contains a string-to-float conversion failure while fitting a pipeline.",
+      "failure_type": "data_quality",
+      "error_message": "ValueError: could not convert string to float: 'From: [...]'",
+      "expected_root_cause_code": "invalid_feature_types"
+    },
+    {
+      "case_id": "sklearn_infinity_validation",
+      "source_kind": "official_source_code",
+      "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/sklearn/utils/validation.py",
+      "source_note": "Official scikit-learn validation implementation documents/reports non-finite input rejection.",
+      "failure_type": "data_quality",
+      "error_message": "ValueError: Input X contains infinity or a value too large for dtype('float64').",
+      "expected_root_cause_code": "invalid_feature_values"
+    },
+    {
+      "case_id": "sklearn_invalid_nested_parameter",
+      "source_kind": "public_issue",
+      "source_url": "https://github.com/scikit-learn/scikit-learn/issues/9944",
+      "source_note": "Issue reports an invalid nested estimator parameter supplied through Pipeline.set_params.",
+      "failure_type": "configuration_error",
+      "error_message": "ValueError: Invalid parameter alpha for estimator DummyRegressor. Check the list of available parameters.",
+      "expected_root_cause_code": "invalid_parameter:alpha"
+    },
+    {
+      "case_id": "mlflow_helper_import_missing",
+      "source_kind": "public_issue",
+      "source_url": "https://github.com/mlflow/mlflow/issues/12922",
+      "source_note": "Issue reports a ModuleNotFoundError for a helper module when loading a logged model.",
+      "failure_type": "dependency_error",
+      "error_message": "ModuleNotFoundError: No module named 'helper'.",
+      "expected_root_cause_code": "missing_module:helper"
+    },
+    {
+      "case_id": "mlflow_package_not_installed",
+      "source_kind": "public_issue",
+      "source_url": "https://github.com/mlflow/mlflow/issues/4861",
+      "source_note": "MLflow project run fails because the mlflow package is not available in the launched environment.",
+      "failure_type": "dependency_error",
+      "error_message": "ModuleNotFoundError: No module named 'mlflow'.",
+      "expected_root_cause_code": "missing_module:mlflow"
+    },
+    {
+      "case_id": "mlflow_serialized_model_module_missing",
+      "source_kind": "public_issue",
+      "source_url": "https://github.com/mlflow/mlflow/issues/9514",
+      "source_note": "Issue reports ModuleNotFoundError when loading a serialized model requiring a custom module.",
+      "failure_type": "dependency_error",
+      "error_message": "ModuleNotFoundError: No module named 'model'.",
+      "expected_root_cause_code": "missing_module:model"
+    },
+    {
+      "case_id": "mlflow_hdfs_artifact_permission",
+      "source_kind": "public_issue",
+      "source_url": "https://github.com/mlflow/mlflow/issues/7580",
+      "source_note": "Issue reports a PermissionError while reading remote HDFS model artifacts; path redacted.",
+      "failure_type": "unknown_runtime_failure",
+      "error_message": "PermissionError: [Errno 13] Opening HDFS file '[REDACTED_PATH]' failed. Detail: [errno 13] Permission denied.",
+      "expected_root_cause_code": "unknown"
+    },
+    {
+      "case_id": "mlserver_model_registry_attribute_error",
+      "source_kind": "public_issue",
+      "source_url": "https://github.com/mlflow/mlflow/issues/12656",
+      "source_note": "Issue traceback includes a NoneType attribute error during model-serving lifecycle operations.",
+      "failure_type": "unknown_runtime_failure",
+      "error_message": "AttributeError: 'NoneType' object has no attribute 'inputs'.",
+      "expected_root_cause_code": "unknown"
+    }
+  ]
+}

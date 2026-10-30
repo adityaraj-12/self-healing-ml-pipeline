@@ -1,0 +1,2 @@
+[13:14:06 UTC] [ERROR] PREFLIGHT FAILED | missing/incompatible configuration: OPENAI_MODEL, OPENAI_API_KEY
+[13:14:06 UTC] [ERROR] Manifest: /Volumes/PortableSSD/Learning/M. Tech/Paper 2/self-healing-ml-pipeline-v17-upgrade/self-healing-ml-pipeline/research_artifacts/live_llm_v17/smoke_01/llm_run_manifest_20261027_131406_402803.json

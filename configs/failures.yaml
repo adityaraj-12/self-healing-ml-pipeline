@@ -1,0 +1,19 @@
+failures:
+  schema_change:
+    enabled: true
+    original_column: "mean radius"
+    replacement_column: "mean_radius"
+
+  data_quality:
+    enabled: true
+    column: "mean radius"
+    missing_fraction: 0.10
+
+  configuration_error:
+    enabled: true
+    parameter: "C"
+    invalid_value: 0.0
+
+  dependency_error:
+    enabled: true
+    module: "fake_ml_dependency"

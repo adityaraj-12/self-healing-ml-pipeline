@@ -1,0 +1,205 @@
+cases:
+  # -----------------------------------------------
+  # F1: Schema change — three different columns
+  # -----------------------------------------------
+  - case_id: schema_01
+    failure_type: schema_change
+    parameters:
+      original_column: "mean radius"
+      replacement_column: "mean_radius"
+    ground_truth:
+      root_cause_code: "schema_rename:mean_radius->mean radius"
+      expected_repair: "rename_column"
+
+  - case_id: schema_02
+    failure_type: schema_change
+    parameters:
+      original_column: "mean texture"
+      replacement_column: "mean_texture"
+    ground_truth:
+      root_cause_code: "schema_rename:mean_texture->mean texture"
+      expected_repair: "rename_column"
+
+  - case_id: schema_03
+    failure_type: schema_change
+    parameters:
+      original_column: "mean perimeter"
+      replacement_column: "mean_perimeter"
+    ground_truth:
+      root_cause_code: "schema_rename:mean_perimeter->mean perimeter"
+      expected_repair: "rename_column"
+
+  # -----------------------------------------------
+  # F2: Data quality — varied columns and patterns
+  # -----------------------------------------------
+  - case_id: data_01
+    failure_type: data_quality
+    parameters:
+      column: "mean radius"
+      missing_fraction: 0.05
+      random_seed: 13
+    ground_truth:
+      root_cause_code: "missing_feature_values"
+      expected_repair: "impute_missing_values"
+
+  - case_id: data_02
+    failure_type: data_quality
+    parameters:
+      column: "mean texture"
+      missing_fraction: 0.10
+      random_seed: 42
+    ground_truth:
+      root_cause_code: "missing_feature_values"
+      expected_repair: "impute_missing_values"
+
+  - case_id: data_03
+    failure_type: data_quality
+    parameters:
+      column: "mean perimeter"
+      missing_fraction: 0.20
+      random_seed: 87
+    ground_truth:
+      root_cause_code: "missing_feature_values"
+      expected_repair: "impute_missing_values"
+
+  # -----------------------------------------------
+  # F3: Configuration failure — varied invalid C
+  # -----------------------------------------------
+  - case_id: config_01
+    failure_type: configuration_error
+    parameters:
+      parameter: "C"
+      invalid_value: 0.0
+    ground_truth:
+      root_cause_code: "invalid_parameter:C"
+      expected_repair: "restore_configuration"
+
+  - case_id: config_02
+    failure_type: configuration_error
+    parameters:
+      parameter: "C"
+      invalid_value: -1.0
+    ground_truth:
+      root_cause_code: "invalid_parameter:C"
+      expected_repair: "restore_configuration"
+
+  - case_id: config_03
+    failure_type: configuration_error
+    parameters:
+      parameter: "C"
+      invalid_value: -0.5
+    ground_truth:
+      root_cause_code: "invalid_parameter:C"
+      expected_repair: "restore_configuration"
+
+  # -----------------------------------------------
+  # F4: Dependency failure — simulated modules
+  # -----------------------------------------------
+  - case_id: dependency_01
+    failure_type: dependency_error
+    parameters:
+      module: "fake_ml_dependency_a"
+    ground_truth:
+      root_cause_code: "missing_module:fake_ml_dependency_a"
+      expected_repair: "verify_dependency"
+
+  - case_id: dependency_02
+    failure_type: dependency_error
+    parameters:
+      module: "fake_ml_dependency_b"
+    ground_truth:
+      root_cause_code: "missing_module:fake_ml_dependency_b"
+      expected_repair: "verify_dependency"
+
+  - case_id: dependency_03
+    failure_type: dependency_error
+    parameters:
+      module: "fake_ml_dependency_c"
+    ground_truth:
+      root_cause_code: "missing_module:fake_ml_dependency_c"
+      expected_repair: "verify_dependency"
+  # V16 comparative stress variants: columns, missingness, parameter types/ranges,
+  # and dependency identities differ from the original twelve templates.
+  - case_id: schema_04
+    failure_type: schema_change
+    parameters: {original_column: "worst radius", replacement_column: "worst_radius"}
+    ground_truth: {root_cause_code: "schema_rename:worst_radius->worst radius", expected_repair: "rename_column"}
+  - case_id: schema_05
+    failure_type: schema_change
+    parameters: {original_column: "worst texture", replacement_column: "worst_texture"}
+    ground_truth: {root_cause_code: "schema_rename:worst_texture->worst texture", expected_repair: "rename_column"}
+  - case_id: schema_06
+    failure_type: schema_change
+    parameters: {original_column: "worst perimeter", replacement_column: "worst_perimeter"}
+    ground_truth: {root_cause_code: "schema_rename:worst_perimeter->worst perimeter", expected_repair: "rename_column"}
+  - case_id: schema_07
+    failure_type: schema_change
+    parameters: {original_column: "worst area", replacement_column: "worst_area"}
+    ground_truth: {root_cause_code: "schema_rename:worst_area->worst area", expected_repair: "rename_column"}
+  - case_id: schema_08
+    failure_type: schema_change
+    parameters: {original_column: "mean compactness", replacement_column: "mean_compactness"}
+    ground_truth: {root_cause_code: "schema_rename:mean_compactness->mean compactness", expected_repair: "rename_column"}
+
+  - case_id: data_04
+    failure_type: data_quality
+    parameters: {column: "worst radius", missing_fraction: 0.03, random_seed: 101}
+    ground_truth: {root_cause_code: "missing_feature_values", expected_repair: "impute_missing_values"}
+  - case_id: data_05
+    failure_type: data_quality
+    parameters: {column: "worst texture", missing_fraction: 0.25, random_seed: 314}
+    ground_truth: {root_cause_code: "missing_feature_values", expected_repair: "impute_missing_values"}
+  - case_id: data_06
+    failure_type: data_quality
+    parameters: {column: "worst perimeter", missing_fraction: 0.35, random_seed: 2718}
+    ground_truth: {root_cause_code: "missing_feature_values", expected_repair: "impute_missing_values"}
+  - case_id: data_07
+    failure_type: data_quality
+    parameters: {column: "worst area", missing_fraction: 0.40, random_seed: 2025}
+    ground_truth: {root_cause_code: "missing_feature_values", expected_repair: "impute_missing_values"}
+  - case_id: data_08
+    failure_type: data_quality
+    parameters: {column: "mean compactness", missing_fraction: 0.15, random_seed: 9001}
+    ground_truth: {root_cause_code: "missing_feature_values", expected_repair: "impute_missing_values"}
+
+  - case_id: config_04
+    failure_type: configuration_error
+    parameters: {parameter: "C", invalid_value: -10.0}
+    ground_truth: {root_cause_code: "invalid_parameter:C", expected_repair: "restore_configuration"}
+  - case_id: config_05
+    failure_type: configuration_error
+    parameters: {parameter: "max_iter", invalid_value: -1}
+    ground_truth: {root_cause_code: "invalid_parameter:max_iter", expected_repair: "restore_configuration"}
+  - case_id: config_06
+    failure_type: configuration_error
+    parameters: {parameter: "max_iter", invalid_value: "not_an_integer"}
+    ground_truth: {root_cause_code: "invalid_parameter:max_iter", expected_repair: "restore_configuration"}
+  - case_id: config_07
+    failure_type: configuration_error
+    parameters: {parameter: "max_iter", invalid_value: 1.5}
+    ground_truth: {root_cause_code: "invalid_parameter:max_iter", expected_repair: "restore_configuration"}
+  - case_id: config_08
+    failure_type: configuration_error
+    parameters: {parameter: "max_iter", invalid_value: "200"}
+    ground_truth: {root_cause_code: "invalid_parameter:max_iter", expected_repair: "restore_configuration"}
+
+  - case_id: dependency_04
+    failure_type: dependency_error
+    parameters: {module: "shadowed_runtime_alpha"}
+    ground_truth: {root_cause_code: "missing_module:shadowed_runtime_alpha", expected_repair: "verify_dependency"}
+  - case_id: dependency_05
+    failure_type: dependency_error
+    parameters: {module: "plugin_loader_beta"}
+    ground_truth: {root_cause_code: "missing_module:plugin_loader_beta", expected_repair: "verify_dependency"}
+  - case_id: dependency_06
+    failure_type: dependency_error
+    parameters: {module: "feature_store_gamma"}
+    ground_truth: {root_cause_code: "missing_module:feature_store_gamma", expected_repair: "verify_dependency"}
+  - case_id: dependency_07
+    failure_type: dependency_error
+    parameters: {module: "isolated_test_delta"}
+    ground_truth: {root_cause_code: "missing_module:isolated_test_delta", expected_repair: "verify_dependency"}
+  - case_id: dependency_08
+    failure_type: dependency_error
+    parameters: {module: "custom_backend_epsilon"}
+    ground_truth: {root_cause_code: "missing_module:custom_backend_epsilon", expected_repair: "verify_dependency"}

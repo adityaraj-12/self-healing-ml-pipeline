@@ -1,0 +1,13 @@
+{
+  "dataset_id": "rca_external_annotation_candidate_v1",
+  "created_at_utc": "2026-10-24T09:53:30.737029+00:00",
+  "case_count": 40,
+  "unique_sources": 40,
+  "duplicates_vs_prior_public_probe": 0,
+  "rule_implementation_sha256_frozen_before_annotation_packet_evaluation": "00a0dc340102408c5a2dc0ff430c25691795f9b551197eefee49caf3131a6164",
+  "annotation_packet_sha256": "c44f0b6cbdda9bffcab04be298d3d260b76a56c8cdd02c51ab46d70b1f17b5de",
+  "source_register_sha256": "b39a3b512c9f7f846d70bd1d35e22db226013f4466a584485c048993e712095b",
+  "status": "candidate packet only; not yet independently labelled; no model performance score should be computed or claimed until external annotations are completed and sealed.",
+  "selection_limitation": "Cases were assembled with assistant assistance after the rule implementation existed. This is not yet a genuinely independently selected sample. An independent evaluator should replace/add cases or confirm an independently defined selection process before calling the evaluation independent.",
+  "evaluation_scope_limitation": "RuleBasedRCA accepts failure_family as input; the current scoring harness measures subcode mapping conditional on externally annotated family. It does not evaluate end-to-end failure-family detection."
+}

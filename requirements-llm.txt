@@ -1,0 +1,4 @@
+# Install the pinned core environment plus the SDK used by LLM-backed modules.
+-r requirements.txt
+# Pinned current SDK; the API/provider endpoint still needs a live smoke test.
+openai==3.20.0

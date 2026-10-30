@@ -1,0 +1,52 @@
+{
+  "dataset_id": "failure-stress-challenge-v1",
+  "status": "frozen synthetic diagnostic stress set; not externally annotated",
+  "selection_note": "Cases were drafted before executing the evaluator to stress alternate wording, ambiguous incidents, and unsupported mechanisms beyond the original twelve injection templates. They are project-authored and not independent or production examples.",
+  "labeling_scope": "Top-level failure-family detection uses each case's expected_failure_family. Root-cause subcode evaluation supplies that expected family to RuleBasedRCA and is conditional mapping, not end-to-end family detection.",
+  "cases": [
+    {"case_id":"S01","stage":"schema_validation","exception_type":"ValueError","message":"Schema mismatch | missing=['customer_tenure'] | unexpected=['tenure_months']","expected_failure_family":"schema_change","expected_root_cause_code":"schema_rename:tenure_months->customer_tenure"},
+    {"case_id":"S02","stage":"schema_validation","exception_type":"ValueError","message":"Schema mismatch | missing=['a', 'b'] | unexpected=['x', 'y']","expected_failure_family":"schema_change","expected_root_cause_code":"schema_mismatch"},
+    {"case_id":"S03","stage":"feature_validation","exception_type":"KeyError","message":"'mean radius'","expected_failure_family":"schema_change","expected_root_cause_code":"schema_mismatch"},
+    {"case_id":"S04","stage":"model_inference","exception_type":"ValueError","message":"Feature names must be in the same order as they were in fit.","expected_failure_family":"schema_change","expected_root_cause_code":"schema_mismatch"},
+    {"case_id":"S05","stage":"ingestion","exception_type":"ValueError","message":"Column customer_age is absent from the incoming batch.","expected_failure_family":"schema_change","expected_root_cause_code":"schema_mismatch"},
+    {"case_id":"S06","stage":"schema_validation","exception_type":"ValueError","message":"Columns missing: ['account_age']; unexpected columns: ['tenure']","expected_failure_family":"schema_change","expected_root_cause_code":"schema_mismatch"},
+    {"case_id":"S07","stage":"model_inference","exception_type":"ValueError","message":"The feature names should match those that were passed during fit.","expected_failure_family":"schema_change","expected_root_cause_code":"schema_mismatch"},
+    {"case_id":"S08","stage":"preprocessing","exception_type":"ValueError","message":"Input has 24 columns, but estimator is expecting 30 features as input.","expected_failure_family":"schema_change","expected_root_cause_code":"schema_mismatch"},
+
+    {"case_id":"D01","stage":"model_training","exception_type":"ValueError","message":"Input X contains NaN.","expected_failure_family":"data_quality","expected_root_cause_code":"missing_feature_values"},
+    {"case_id":"D02","stage":"model_training","exception_type":"ValueError","message":"Input data contains infinity or a value too large for dtype('float64').","expected_failure_family":"data_quality","expected_root_cause_code":"invalid_feature_values"},
+    {"case_id":"D03","stage":"preprocessing","exception_type":"ValueError","message":"could not convert string to float: 'unknown'","expected_failure_family":"data_quality","expected_root_cause_code":"invalid_feature_types"},
+    {"case_id":"D04","stage":"feature_validation","exception_type":"TypeError","message":"Expected numeric value, found string token 'N/A' in feature age.","expected_failure_family":"data_quality","expected_root_cause_code":"invalid_feature_types"},
+    {"case_id":"D05","stage":"model_training","exception_type":"ValueError","message":"Found input variables with NA values.","expected_failure_family":"data_quality","expected_root_cause_code":"missing_feature_values"},
+    {"case_id":"D06","stage":"preprocessing","exception_type":"ValueError","message":"Feature column age has +/-inf and a non-finite value.","expected_failure_family":"data_quality","expected_root_cause_code":"invalid_feature_values"},
+    {"case_id":"D07","stage":"feature_validation","exception_type":"TypeError","message":"DataFrame has dtype object although numeric features are required.","expected_failure_family":"data_quality","expected_root_cause_code":"invalid_feature_types"},
+    {"case_id":"D08","stage":"preprocessing","exception_type":"ValueError","message":"Data-quality validation failed; the available message does not identify the subtype.","expected_failure_family":"data_quality","expected_root_cause_code":"unclassified_data_quality"},
+
+    {"case_id":"C01","stage":"model_training","exception_type":"ValueError","message":"The 'max_iter' parameter must be a positive integer.","expected_failure_family":"configuration_error","expected_root_cause_code":"invalid_parameter:max_iter"},
+    {"case_id":"C02","stage":"model_training","exception_type":"ValueError","message":"The 'C' parameter must be a float in the range (0, inf). Got 0 instead.","expected_failure_family":"configuration_error","expected_root_cause_code":"invalid_parameter:C"},
+    {"case_id":"C03","stage":"model_training","exception_type":"TypeError","message":"got an unexpected keyword argument 'solver'","expected_failure_family":"configuration_error","expected_root_cause_code":"invalid_parameter:solver"},
+    {"case_id":"C04","stage":"model_training","exception_type":"ValueError","message":"Invalid configuration: n_estimators cannot be zero.","expected_failure_family":"configuration_error","expected_root_cause_code":"invalid_model_configuration"},
+    {"case_id":"C05","stage":"model_training","exception_type":"ValueError","message":"param max_depth must be one of the supported values.","expected_failure_family":"configuration_error","expected_root_cause_code":"invalid_parameter:max_depth"},
+    {"case_id":"C06","stage":"model_training","exception_type":"ValueError","message":"The supplied model option is an unsupported parameter.","expected_failure_family":"configuration_error","expected_root_cause_code":"invalid_model_configuration"},
+    {"case_id":"C07","stage":"model_training","exception_type":"TypeError","message":"Unexpected keyword argument 'learning_rate' passed to fit().","expected_failure_family":"configuration_error","expected_root_cause_code":"invalid_parameter:learning_rate"},
+    {"case_id":"C08","stage":"initialization","exception_type":"ValueError","message":"Training crashed due to an invalid configuration value.","expected_failure_family":"configuration_error","expected_root_cause_code":"invalid_model_configuration"},
+
+    {"case_id":"P01","stage":"initialization","exception_type":"ModuleNotFoundError","message":"No module named 'feature_store_client'","expected_failure_family":"dependency_error","expected_root_cause_code":"missing_module:feature_store_client"},
+    {"case_id":"P02","stage":"initialization","exception_type":"ImportError","message":"cannot import name 'Client' from 'feature_store_sdk'","expected_failure_family":"dependency_error","expected_root_cause_code":"missing_runtime_dependency"},
+    {"case_id":"P03","stage":"model_loading","exception_type":"ImportError","message":"DLL load failed while importing _native_ops","expected_failure_family":"dependency_error","expected_root_cause_code":"missing_runtime_dependency"},
+    {"case_id":"P04","stage":"initialization","exception_type":"OSError","message":"libcustom_runtime.so: shared object file not found","expected_failure_family":"dependency_error","expected_root_cause_code":"missing_runtime_dependency"},
+    {"case_id":"P05","stage":"initialization","exception_type":"RuntimeError","message":"Dependency conflict: installed library version is incompatible.","expected_failure_family":"dependency_error","expected_root_cause_code":"missing_runtime_dependency"},
+    {"case_id":"P06","stage":"initialization","exception_type":"ModuleNotFoundError","message":"No module named 'my_runtime'","expected_failure_family":"dependency_error","expected_root_cause_code":"missing_module:my_runtime"},
+    {"case_id":"P07","stage":"initialization","exception_type":"ModuleNotFoundError","message":"No module named 'mlflow.server'; 'mlflow' is not a package","expected_failure_family":"unknown_runtime_failure","expected_root_cause_code":"unknown"},
+    {"case_id":"P08","stage":"initialization","exception_type":"ImportError","message":"cannot import name 'client' from partially initialized module 'myapp' (circular import)","expected_failure_family":"unknown_runtime_failure","expected_root_cause_code":"unknown"},
+
+    {"case_id":"U01","stage":"artifact_verification","exception_type":"FileNotFoundError","message":"Model artifact file not found at configured path.","expected_failure_family":"unknown_runtime_failure","expected_root_cause_code":"unknown"},
+    {"case_id":"U02","stage":"distributed_execution","exception_type":"TimeoutError","message":"Timed out waiting for distributed worker heartbeat.","expected_failure_family":"unknown_runtime_failure","expected_root_cause_code":"unknown"},
+    {"case_id":"U03","stage":"model_loading","exception_type":"PermissionError","message":"Permission denied while reading model registry artifact.","expected_failure_family":"unknown_runtime_failure","expected_root_cause_code":"unknown"},
+    {"case_id":"U04","stage":"artifact_verification","exception_type":"KeyError","message":"'artifact_id'","expected_failure_family":"unknown_runtime_failure","expected_root_cause_code":"unknown"},
+    {"case_id":"U05","stage":"model_training","exception_type":"RuntimeError","message":"CUDA out of memory. Tried to allocate 2.00 GiB.","expected_failure_family":"unknown_runtime_failure","expected_root_cause_code":"unknown"},
+    {"case_id":"U06","stage":"numeric_operation","exception_type":"ValueError","message":"operands could not be broadcast together with shapes (128,12) (128,10)","expected_failure_family":"unknown_runtime_failure","expected_root_cause_code":"unknown"},
+    {"case_id":"U07","stage":"initialization","exception_type":"FileNotFoundError","message":"config.yaml is absent from the mounted runtime directory.","expected_failure_family":"unknown_runtime_failure","expected_root_cause_code":"unknown"},
+    {"case_id":"U08","stage":"artifact_persistence","exception_type":"RuntimeError","message":"Artifact path rejected by the resolved-path traversal guard.","expected_failure_family":"unknown_runtime_failure","expected_root_cause_code":"unknown"}
+  ]
+}

@@ -1,0 +1,6 @@
+folder,run_id,status,completed_cases,trial_records,completion_fraction,capture_records,capture_responses_received,capture_request_failed,capture_rate_limit_failed_interactions,malformed_capture_lines
+full_01,20261027_152449_354530,completed,32,96,1.0,33,33,0,0,0
+full_02_retry,20261028_054813_350434,completed,32,96,1.0,35,35,0,0,0
+full_03_retry,20261029_061556_199086,completed,32,96,1.0,35,33,2,2,0
+full_04,20261029_063505_652566,completed,32,96,1.0,34,34,0,0,0
+full_05,20261029_064409_501954,completed,32,96,1.0,35,35,0,0,0

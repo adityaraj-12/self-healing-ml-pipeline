@@ -1,0 +1,147 @@
+{
+  "generated_at": "2026-10-27T15:46:02.188989+00:00",
+  "total_cases": 2,
+  "trial_records": 6,
+  "methods": {
+    "llm_direct_isolated": {
+      "cases": 2,
+      "recovered": 1,
+      "overall_recovery_rate": 0.5,
+      "end_to_end_recovery_rate": 0.5,
+      "automatically_eligible_cases": 1,
+      "automatic_recovery_rate": 1.0,
+      "human_review_required": 0,
+      "candidate_generation_failed": 0,
+      "provider_rate_limit_failures": 1,
+      "operational_failure_cases": 1,
+      "status_counts": {
+        "provider_quota_exhausted": 1,
+        "recovered": 1
+      },
+      "validation_attempts": 0,
+      "validation_pass_rate": null,
+      "mean_method_duration_seconds": 0.009374,
+      "per_failure_type": {
+        "schema_change": {
+          "cases": 2,
+          "recovered": 1,
+          "human_review_required": 0,
+          "operational_failures": 1,
+          "status_counts": {
+            "provider_quota_exhausted": 1,
+            "recovered": 1
+          }
+        }
+      },
+      "mean_llm_generation_seconds": 4.334209,
+      "mean_generation_plus_method_seconds": 7.401653,
+      "generation_timed_cases": 2,
+      "generation_plus_method_timed_cases": 1,
+      "mean_generation_seconds_for_valid_candidates": 7.392279,
+      "valid_candidate_generation_timed_cases": 1
+    },
+    "llm_validated": {
+      "cases": 2,
+      "recovered": 1,
+      "overall_recovery_rate": 0.5,
+      "end_to_end_recovery_rate": 0.5,
+      "automatically_eligible_cases": 1,
+      "automatic_recovery_rate": 1.0,
+      "human_review_required": 0,
+      "candidate_generation_failed": 0,
+      "provider_rate_limit_failures": 1,
+      "operational_failure_cases": 1,
+      "status_counts": {
+        "provider_quota_exhausted": 1,
+        "recovered": 1
+      },
+      "validation_attempts": 1,
+      "validation_pass_rate": 1.0,
+      "mean_method_duration_seconds": 0.096901,
+      "per_failure_type": {
+        "schema_change": {
+          "cases": 2,
+          "recovered": 1,
+          "human_review_required": 0,
+          "operational_failures": 1,
+          "status_counts": {
+            "provider_quota_exhausted": 1,
+            "recovered": 1
+          }
+        }
+      },
+      "mean_llm_generation_seconds": 4.334209,
+      "mean_generation_plus_method_seconds": 7.48918,
+      "generation_timed_cases": 2,
+      "generation_plus_method_timed_cases": 1,
+      "mean_generation_seconds_for_valid_candidates": 7.392279,
+      "valid_candidate_generation_timed_cases": 1
+    },
+    "rule_based_gated": {
+      "cases": 2,
+      "recovered": 2,
+      "overall_recovery_rate": 1.0,
+      "end_to_end_recovery_rate": 1.0,
+      "automatically_eligible_cases": 2,
+      "automatic_recovery_rate": 1.0,
+      "human_review_required": 0,
+      "candidate_generation_failed": 0,
+      "provider_rate_limit_failures": 0,
+      "operational_failure_cases": 0,
+      "status_counts": {
+        "recovered": 2
+      },
+      "validation_attempts": 2,
+      "validation_pass_rate": 1.0,
+      "mean_method_duration_seconds": 0.1988305,
+      "per_failure_type": {
+        "schema_change": {
+          "cases": 2,
+          "recovered": 2,
+          "human_review_required": 0,
+          "operational_failures": 0,
+          "status_counts": {
+            "recovered": 2
+          }
+        }
+      },
+      "mean_repair_planning_seconds": 0.000131,
+      "mean_planning_plus_method_seconds": 0.198961
+    }
+  },
+  "interpretation_note": "Overall recovery rate uses all recorded method rows as its denominator. Conditional automatic recovery excludes human-review cases and recorded operational/generation failures. Scenario repeats are repeated observations of fixed project-authored templates, not independent real-world incidents.",
+  "diagnosis_evaluation": {
+    "evaluated_cases": 2,
+    "correct": 2,
+    "accuracy": 1.0
+  },
+  "run_metadata": {
+    "run_id": "20261027_154551_252953",
+    "run_status": "stopped_provider_quota",
+    "stop_reason": "provider_daily_quota_exhausted",
+    "repeats_requested": 1,
+    "scenario_templates_requested": 32,
+    "planned_case_executions": 32,
+    "completed_case_executions": 2,
+    "planned_trial_records": 96,
+    "written_trial_records": 6,
+    "completion_fraction": 0.0625,
+    "case_execution_errors": 0,
+    "capture_filename": "llm_io.jsonl",
+    "raw_results_filename": "repeated_trials_20261027_154551_252953.jsonl",
+    "manifest_filename": "llm_run_manifest_20261027_154551_252953.json",
+    "capture_audit": {
+      "capture_filename": "llm_io.jsonl",
+      "records": 2,
+      "malformed_jsonl_lines": 0,
+      "status_counts": {
+        "request_failed": 1,
+        "response_received": 1
+      },
+      "rate_limit_failed_interactions": 1,
+      "first_interaction_utc": "2026-10-27T15:45:59.490376+00:00",
+      "last_interaction_utc": "2026-10-27T15:46:01.974412+00:00"
+    }
+  },
+  "llm_run_manifest": "llm_run_manifest_20261027_154551_252953.json"
+}

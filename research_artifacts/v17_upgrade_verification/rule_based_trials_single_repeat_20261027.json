@@ -1,0 +1,565 @@
+{
+  "generated_at": "2026-10-27T12:10:34.681757+00:00",
+  "method": "rule_based_gated",
+  "scenario_variants": 32,
+  "repeats_per_scenario": 1,
+  "trials": 32,
+  "recovered": 24,
+  "overall_recovery_rate": 0.75,
+  "overall_recovery_wilson_95": [
+    0.5789344100575552,
+    0.8674759908149096
+  ],
+  "automatically_eligible_trials": 24,
+  "eligible_recovered": 24,
+  "eligible_recovery_rate": 1.0,
+  "eligible_recovery_wilson_95": [
+    0.8620237953250198,
+    1.0
+  ],
+  "human_review": 8,
+  "blocked_or_failed": 0,
+  "mean_trial_duration_seconds": 0.07012421875,
+  "median_trial_duration_seconds": 0.08356749999999999,
+  "by_failure_type": {
+    "configuration_error": {
+      "trials": 8,
+      "recovered": 8,
+      "human_review": 0,
+      "blocked_or_failed": 0
+    },
+    "data_quality": {
+      "trials": 8,
+      "recovered": 8,
+      "human_review": 0,
+      "blocked_or_failed": 0
+    },
+    "dependency_error": {
+      "trials": 8,
+      "recovered": 0,
+      "human_review": 8,
+      "blocked_or_failed": 0
+    },
+    "schema_change": {
+      "trials": 8,
+      "recovered": 8,
+      "human_review": 0,
+      "blocked_or_failed": 0
+    }
+  },
+  "interpretation": "This is a fresh, non-LLM run of the deterministic gated pathway. It does not reproduce the LLM comparison or isolate policy-gate causality. Repeated trials reuse 32 fixed scenario templates, so Wilson intervals are descriptive only and should not be interpreted as population-level uncertainty.",
+  "results": [
+    {
+      "case_id": "schema_01",
+      "failure_type": "schema_change",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "schema_rename:mean_radius->mean radius",
+      "candidate_action": "rename_column",
+      "validation_status": "passed",
+      "duration_seconds": 0.060328,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "schema_02",
+      "failure_type": "schema_change",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "schema_rename:mean_texture->mean texture",
+      "candidate_action": "rename_column",
+      "validation_status": "passed",
+      "duration_seconds": 0.057911,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "schema_03",
+      "failure_type": "schema_change",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "schema_rename:mean_perimeter->mean perimeter",
+      "candidate_action": "rename_column",
+      "validation_status": "passed",
+      "duration_seconds": 0.053239,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "data_01",
+      "failure_type": "data_quality",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "missing_feature_values",
+      "candidate_action": "impute_missing_values",
+      "validation_status": "passed",
+      "duration_seconds": 0.092489,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "data_02",
+      "failure_type": "data_quality",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "missing_feature_values",
+      "candidate_action": "impute_missing_values",
+      "validation_status": "passed",
+      "duration_seconds": 0.097299,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "data_03",
+      "failure_type": "data_quality",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "missing_feature_values",
+      "candidate_action": "impute_missing_values",
+      "validation_status": "passed",
+      "duration_seconds": 0.098059,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "config_01",
+      "failure_type": "configuration_error",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "invalid_parameter:C",
+      "candidate_action": "restore_configuration",
+      "validation_status": "passed",
+      "duration_seconds": 0.091126,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "config_02",
+      "failure_type": "configuration_error",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "invalid_parameter:C",
+      "candidate_action": "restore_configuration",
+      "validation_status": "passed",
+      "duration_seconds": 0.09666,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "config_03",
+      "failure_type": "configuration_error",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "invalid_parameter:C",
+      "candidate_action": "restore_configuration",
+      "validation_status": "passed",
+      "duration_seconds": 0.092183,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "dependency_01",
+      "failure_type": "dependency_error",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "needs_human_approval",
+      "rca_root_cause_code": "missing_module:fake_ml_dependency_a",
+      "candidate_action": "verify_dependency",
+      "validation_status": "needs_human_approval",
+      "duration_seconds": 0.022321,
+      "raised_error": null,
+      "post_recovery_check": null
+    },
+    {
+      "case_id": "dependency_02",
+      "failure_type": "dependency_error",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "needs_human_approval",
+      "rca_root_cause_code": "missing_module:fake_ml_dependency_b",
+      "candidate_action": "verify_dependency",
+      "validation_status": "needs_human_approval",
+      "duration_seconds": 0.02313,
+      "raised_error": null,
+      "post_recovery_check": null
+    },
+    {
+      "case_id": "dependency_03",
+      "failure_type": "dependency_error",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "needs_human_approval",
+      "rca_root_cause_code": "missing_module:fake_ml_dependency_c",
+      "candidate_action": "verify_dependency",
+      "validation_status": "needs_human_approval",
+      "duration_seconds": 0.045577,
+      "raised_error": null,
+      "post_recovery_check": null
+    },
+    {
+      "case_id": "schema_04",
+      "failure_type": "schema_change",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "schema_rename:worst_radius->worst radius",
+      "candidate_action": "rename_column",
+      "validation_status": "passed",
+      "duration_seconds": 0.053152,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "schema_05",
+      "failure_type": "schema_change",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "schema_rename:worst_texture->worst texture",
+      "candidate_action": "rename_column",
+      "validation_status": "passed",
+      "duration_seconds": 0.05556,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "schema_06",
+      "failure_type": "schema_change",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "schema_rename:worst_perimeter->worst perimeter",
+      "candidate_action": "rename_column",
+      "validation_status": "passed",
+      "duration_seconds": 0.072245,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "schema_07",
+      "failure_type": "schema_change",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "schema_rename:worst_area->worst area",
+      "candidate_action": "rename_column",
+      "validation_status": "passed",
+      "duration_seconds": 0.059083,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "schema_08",
+      "failure_type": "schema_change",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "schema_rename:mean_compactness->mean compactness",
+      "candidate_action": "rename_column",
+      "validation_status": "passed",
+      "duration_seconds": 0.080245,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "data_04",
+      "failure_type": "data_quality",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "missing_feature_values",
+      "candidate_action": "impute_missing_values",
+      "validation_status": "passed",
+      "duration_seconds": 0.105025,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "data_05",
+      "failure_type": "data_quality",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "missing_feature_values",
+      "candidate_action": "impute_missing_values",
+      "validation_status": "passed",
+      "duration_seconds": 0.105889,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "data_06",
+      "failure_type": "data_quality",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "missing_feature_values",
+      "candidate_action": "impute_missing_values",
+      "validation_status": "passed",
+      "duration_seconds": 0.102223,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "data_07",
+      "failure_type": "data_quality",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "missing_feature_values",
+      "candidate_action": "impute_missing_values",
+      "validation_status": "passed",
+      "duration_seconds": 0.097301,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "data_08",
+      "failure_type": "data_quality",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "missing_feature_values",
+      "candidate_action": "impute_missing_values",
+      "validation_status": "passed",
+      "duration_seconds": 0.098823,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "config_04",
+      "failure_type": "configuration_error",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "invalid_parameter:C",
+      "candidate_action": "restore_configuration",
+      "validation_status": "passed",
+      "duration_seconds": 0.091084,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "config_05",
+      "failure_type": "configuration_error",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "invalid_parameter:max_iter",
+      "candidate_action": "restore_configuration",
+      "validation_status": "passed",
+      "duration_seconds": 0.091449,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "config_06",
+      "failure_type": "configuration_error",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "invalid_parameter:max_iter",
+      "candidate_action": "restore_configuration",
+      "validation_status": "passed",
+      "duration_seconds": 0.091626,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "config_07",
+      "failure_type": "configuration_error",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "invalid_parameter:max_iter",
+      "candidate_action": "restore_configuration",
+      "validation_status": "passed",
+      "duration_seconds": 0.08689,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "config_08",
+      "failure_type": "configuration_error",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "recovered",
+      "rca_root_cause_code": "invalid_parameter:max_iter",
+      "candidate_action": "restore_configuration",
+      "validation_status": "passed",
+      "duration_seconds": 0.094311,
+      "raised_error": null,
+      "post_recovery_check": {
+        "model_reload_successful": true,
+        "predictions_identical": true,
+        "metrics_identical": true
+      }
+    },
+    {
+      "case_id": "dependency_04",
+      "failure_type": "dependency_error",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "needs_human_approval",
+      "rca_root_cause_code": "missing_module:shadowed_runtime_alpha",
+      "candidate_action": "verify_dependency",
+      "validation_status": "needs_human_approval",
+      "duration_seconds": 0.024555,
+      "raised_error": null,
+      "post_recovery_check": null
+    },
+    {
+      "case_id": "dependency_05",
+      "failure_type": "dependency_error",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "needs_human_approval",
+      "rca_root_cause_code": "missing_module:plugin_loader_beta",
+      "candidate_action": "verify_dependency",
+      "validation_status": "needs_human_approval",
+      "duration_seconds": 0.023996,
+      "raised_error": null,
+      "post_recovery_check": null
+    },
+    {
+      "case_id": "dependency_06",
+      "failure_type": "dependency_error",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "needs_human_approval",
+      "rca_root_cause_code": "missing_module:feature_store_gamma",
+      "candidate_action": "verify_dependency",
+      "validation_status": "needs_human_approval",
+      "duration_seconds": 0.041912,
+      "raised_error": null,
+      "post_recovery_check": null
+    },
+    {
+      "case_id": "dependency_07",
+      "failure_type": "dependency_error",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "needs_human_approval",
+      "rca_root_cause_code": "missing_module:isolated_test_delta",
+      "candidate_action": "verify_dependency",
+      "validation_status": "needs_human_approval",
+      "duration_seconds": 0.019515,
+      "raised_error": null,
+      "post_recovery_check": null
+    },
+    {
+      "case_id": "dependency_08",
+      "failure_type": "dependency_error",
+      "repeat_index": 0,
+      "method": "rule_based_gated",
+      "status": "needs_human_approval",
+      "rca_root_cause_code": "missing_module:custom_backend_epsilon",
+      "candidate_action": "verify_dependency",
+      "validation_status": "needs_human_approval",
+      "duration_seconds": 0.018769,
+      "raised_error": null,
+      "post_recovery_check": null
+    }
+  ]
+}

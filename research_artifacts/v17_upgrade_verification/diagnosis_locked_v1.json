@@ -1,0 +1,375 @@
+{
+  "generated_at": "2026-10-27T12:16:06.138599+00:00",
+  "dataset_id": "rca_locked_v1",
+  "dataset_sha256": "e00d1cf39d9b394438c4c3f413a5e9a67f52b475f794592f503cf40c45032cc3",
+  "rule_implementation_sha256": "00a0dc340102408c5a2dc0ff430c25691795f9b551197eefee49caf3131a6164",
+  "source_hash_matched_lock": true,
+  "case_count": 36,
+  "correct": 33,
+  "incorrect": 3,
+  "accuracy": 0.9167,
+  "wilson_95_trial_level_descriptive": [
+    0.7817,
+    0.9713
+  ],
+  "by_failure_type": {
+    "configuration_error": {
+      "cases": 9,
+      "correct": 8,
+      "accuracy": 0.8889
+    },
+    "data_quality": {
+      "cases": 11,
+      "correct": 10,
+      "accuracy": 0.9091
+    },
+    "dependency_error": {
+      "cases": 6,
+      "correct": 5,
+      "accuracy": 0.8333
+    },
+    "network_timeout": {
+      "cases": 1,
+      "correct": 1,
+      "accuracy": 1.0
+    },
+    "resource_error": {
+      "cases": 1,
+      "correct": 1,
+      "accuracy": 1.0
+    },
+    "schema_change": {
+      "cases": 5,
+      "correct": 5,
+      "accuracy": 1.0
+    },
+    "storage_error": {
+      "cases": 1,
+      "correct": 1,
+      "accuracy": 1.0
+    },
+    "unknown_runtime_failure": {
+      "cases": 2,
+      "correct": 2,
+      "accuracy": 1.0
+    }
+  },
+  "independence_note": "Developer-authored synthetic challenge. It was frozen before running the evaluation, but it is not third-party authored or blind and is not a production accuracy estimate.",
+  "interpretation": "This is a locked developer-authored synthetic evaluation, separate from the configured trial cases and prior challenge scripts. It is not third-party blind and is not a production accuracy estimate. The interval is descriptive and does not model case-design uncertainty.",
+  "incorrect_cases": [
+    {
+      "case_id": "dq_object_dtype",
+      "failure_type": "data_quality",
+      "error_message": "Object dtype was found in a numeric feature column.",
+      "expected_root_cause_code": "invalid_feature_types",
+      "predicted_root_cause_code": "unclassified_data_quality",
+      "correct": false
+    },
+    {
+      "case_id": "config_setting_name_variant",
+      "failure_type": "configuration_error",
+      "error_message": "Setting `warm_start` violates the selected solver constraint.",
+      "expected_root_cause_code": "invalid_parameter:warm_start",
+      "predicted_root_cause_code": "invalid_model_configuration",
+      "correct": false
+    },
+    {
+      "case_id": "dep_unquoted_module_name",
+      "failure_type": "dependency_error",
+      "error_message": "No module named acme.runtime",
+      "expected_root_cause_code": "missing_module:acme.runtime",
+      "predicted_root_cause_code": "missing_runtime_dependency",
+      "correct": false
+    }
+  ],
+  "results": [
+    {
+      "case_id": "schema_new_alias_contract",
+      "failure_type": "schema_change",
+      "error_message": "Schema contract violation: missing=['worst fractal dimension'] | unexpected=['fractal_dimension_worst']",
+      "expected_root_cause_code": "schema_rename:fractal_dimension_worst->worst fractal dimension",
+      "predicted_root_cause_code": "schema_rename:fractal_dimension_worst->worst fractal dimension",
+      "correct": true
+    },
+    {
+      "case_id": "schema_width_change",
+      "failure_type": "schema_change",
+      "error_message": "The estimator expected 30 ordered feature keys but received 29.",
+      "expected_root_cause_code": "schema_mismatch",
+      "predicted_root_cause_code": "schema_mismatch",
+      "correct": true
+    },
+    {
+      "case_id": "schema_vocab_change",
+      "failure_type": "schema_change",
+      "error_message": "Incoming feature keys differ from the training schema contract.",
+      "expected_root_cause_code": "schema_mismatch",
+      "predicted_root_cause_code": "schema_mismatch",
+      "correct": true
+    },
+    {
+      "case_id": "schema_multi_alias",
+      "failure_type": "schema_change",
+      "error_message": "Schema mismatch | missing=['area error', 'perimeter error'] | unexpected=['area_err', 'peri_err']",
+      "expected_root_cause_code": "schema_mismatch",
+      "predicted_root_cause_code": "schema_mismatch",
+      "correct": true
+    },
+    {
+      "case_id": "dq_na_token",
+      "failure_type": "data_quality",
+      "error_message": "Vector contains NA observations after normalization.",
+      "expected_root_cause_code": "missing_feature_values",
+      "predicted_root_cause_code": "missing_feature_values",
+      "correct": true
+    },
+    {
+      "case_id": "dq_null_entries",
+      "failure_type": "data_quality",
+      "error_message": "Null entries remained in the transformed feature matrix.",
+      "expected_root_cause_code": "missing_feature_values",
+      "predicted_root_cause_code": "missing_feature_values",
+      "correct": true
+    },
+    {
+      "case_id": "dq_infinite_measurement",
+      "failure_type": "data_quality",
+      "error_message": "A positive infinite measurement reached the estimator.",
+      "expected_root_cause_code": "invalid_feature_values",
+      "predicted_root_cause_code": "invalid_feature_values",
+      "correct": true
+    },
+    {
+      "case_id": "dq_parse_failure",
+      "failure_type": "data_quality",
+      "error_message": "Feature value failed to parse: '1,2' is not a decimal.",
+      "expected_root_cause_code": "invalid_feature_types",
+      "predicted_root_cause_code": "invalid_feature_types",
+      "correct": true
+    },
+    {
+      "case_id": "dq_conversion_failure",
+      "failure_type": "data_quality",
+      "error_message": "Could not convert token 'n/a' to float.",
+      "expected_root_cause_code": "invalid_feature_types",
+      "predicted_root_cause_code": "invalid_feature_types",
+      "correct": true
+    },
+    {
+      "case_id": "dq_object_dtype",
+      "failure_type": "data_quality",
+      "error_message": "Object dtype was found in a numeric feature column.",
+      "expected_root_cause_code": "invalid_feature_types",
+      "predicted_root_cause_code": "unclassified_data_quality",
+      "correct": false
+    },
+    {
+      "case_id": "dq_out_of_domain_sentinel",
+      "failure_type": "data_quality",
+      "error_message": "Value -9999 violates the application's feature domain.",
+      "expected_root_cause_code": "unclassified_data_quality",
+      "predicted_root_cause_code": "unclassified_data_quality",
+      "correct": true
+    },
+    {
+      "case_id": "dq_cache_checksum",
+      "failure_type": "data_quality",
+      "error_message": "The feature checksum does not match the cache manifest.",
+      "expected_root_cause_code": "unclassified_data_quality",
+      "predicted_root_cause_code": "unclassified_data_quality",
+      "correct": true
+    },
+    {
+      "case_id": "config_parameter_prefix",
+      "failure_type": "configuration_error",
+      "error_message": "Parameter `tol` must be positive.",
+      "expected_root_cause_code": "invalid_parameter:tol",
+      "predicted_root_cause_code": "invalid_parameter:tol",
+      "correct": true
+    },
+    {
+      "case_id": "config_argument_suffix",
+      "failure_type": "configuration_error",
+      "error_message": "'n_jobs' argument is not supported by the configured estimator.",
+      "expected_root_cause_code": "invalid_parameter:n_jobs",
+      "predicted_root_cause_code": "invalid_parameter:n_jobs",
+      "correct": true
+    },
+    {
+      "case_id": "config_option_without_parameter_word",
+      "failure_type": "configuration_error",
+      "error_message": "Unsupported model option `class_weight` value: unknown.",
+      "expected_root_cause_code": "invalid_model_configuration",
+      "predicted_root_cause_code": "invalid_model_configuration",
+      "correct": true
+    },
+    {
+      "case_id": "config_setting_name_variant",
+      "failure_type": "configuration_error",
+      "error_message": "Setting `warm_start` violates the selected solver constraint.",
+      "expected_root_cause_code": "invalid_parameter:warm_start",
+      "predicted_root_cause_code": "invalid_model_configuration",
+      "correct": false
+    },
+    {
+      "case_id": "config_parameter_name_variant",
+      "failure_type": "configuration_error",
+      "error_message": "The estimator rejects parameter 'multi_class' for this solver.",
+      "expected_root_cause_code": "invalid_parameter:multi_class",
+      "predicted_root_cause_code": "invalid_parameter:multi_class",
+      "correct": true
+    },
+    {
+      "case_id": "config_non_specific_message",
+      "failure_type": "configuration_error",
+      "error_message": "A value constraint was violated before estimator initialization.",
+      "expected_root_cause_code": "invalid_model_configuration",
+      "predicted_root_cause_code": "invalid_model_configuration",
+      "correct": true
+    },
+    {
+      "case_id": "dep_dotted_module",
+      "failure_type": "dependency_error",
+      "error_message": "No module named 'vendor.engine.v2'.",
+      "expected_root_cause_code": "missing_module:vendor.engine.v2",
+      "predicted_root_cause_code": "missing_module:vendor.engine.v2",
+      "correct": true
+    },
+    {
+      "case_id": "dep_optional_adapter",
+      "failure_type": "dependency_error",
+      "error_message": "The runtime cannot import optional adapter 'graph_backend'.",
+      "expected_root_cause_code": "missing_runtime_dependency",
+      "predicted_root_cause_code": "missing_runtime_dependency",
+      "correct": true
+    },
+    {
+      "case_id": "dep_undefined_symbol",
+      "failure_type": "dependency_error",
+      "error_message": "ImportError: undefined symbol `_PyArray_API` in a compiled extension.",
+      "expected_root_cause_code": "missing_runtime_dependency",
+      "predicted_root_cause_code": "missing_runtime_dependency",
+      "correct": true
+    },
+    {
+      "case_id": "dep_unquoted_module_name",
+      "failure_type": "dependency_error",
+      "error_message": "No module named acme.runtime",
+      "expected_root_cause_code": "missing_module:acme.runtime",
+      "predicted_root_cause_code": "missing_runtime_dependency",
+      "correct": false
+    },
+    {
+      "case_id": "unknown_permission",
+      "failure_type": "unknown_runtime_failure",
+      "error_message": "Permission denied while opening the state cache.",
+      "expected_root_cause_code": "unknown",
+      "predicted_root_cause_code": "unknown",
+      "correct": true
+    },
+    {
+      "case_id": "unknown_worker_termination",
+      "failure_type": "resource_error",
+      "error_message": "Out-of-memory condition terminated the worker process.",
+      "expected_root_cause_code": "unknown",
+      "predicted_root_cause_code": "unknown",
+      "correct": true
+    },
+    {
+      "case_id": "unknown_disk_quota",
+      "failure_type": "storage_error",
+      "error_message": "Disk quota exceeded while writing the checkpoint.",
+      "expected_root_cause_code": "unknown",
+      "predicted_root_cause_code": "unknown",
+      "correct": true
+    },
+    {
+      "case_id": "unknown_network_timeout",
+      "failure_type": "network_timeout",
+      "error_message": "ReadTimeout raised while awaiting the feature store response.",
+      "expected_root_cause_code": "unknown",
+      "predicted_root_cause_code": "unknown",
+      "correct": true
+    },
+    {
+      "case_id": "dq_business_bounds",
+      "failure_type": "data_quality",
+      "error_message": "Feature values violate the application's business bounds; observed values are present and types match.",
+      "expected_root_cause_code": "unclassified_data_quality",
+      "predicted_root_cause_code": "unclassified_data_quality",
+      "correct": true
+    },
+    {
+      "case_id": "dq_not_a_number",
+      "failure_type": "data_quality",
+      "error_message": "The parser emitted a 'not a number' sentinel in three feature rows.",
+      "expected_root_cause_code": "missing_feature_values",
+      "predicted_root_cause_code": "missing_feature_values",
+      "correct": true
+    },
+    {
+      "case_id": "dq_null_like",
+      "failure_type": "data_quality",
+      "error_message": "A column contains null-like placeholders in three rows.",
+      "expected_root_cause_code": "missing_feature_values",
+      "predicted_root_cause_code": "missing_feature_values",
+      "correct": true
+    },
+    {
+      "case_id": "schema_duplicate_key",
+      "failure_type": "schema_change",
+      "error_message": "Schema validation found duplicate feature key 'area_mean'.",
+      "expected_root_cause_code": "schema_mismatch",
+      "predicted_root_cause_code": "schema_mismatch",
+      "correct": true
+    },
+    {
+      "case_id": "config_l1_ratio_parameter",
+      "failure_type": "configuration_error",
+      "error_message": "Parameter `l1_ratio` is invalid for this solver.",
+      "expected_root_cause_code": "invalid_parameter:l1_ratio",
+      "predicted_root_cause_code": "invalid_parameter:l1_ratio",
+      "correct": true
+    },
+    {
+      "case_id": "config_class_weight_argument",
+      "failure_type": "configuration_error",
+      "error_message": "The 'class_weight' argument has an unsupported value.",
+      "expected_root_cause_code": "invalid_parameter:class_weight",
+      "predicted_root_cause_code": "invalid_parameter:class_weight",
+      "correct": true
+    },
+    {
+      "case_id": "dep_dynamic_loader",
+      "failure_type": "dependency_error",
+      "error_message": "ImportError: no dynamic loader could find libtorch_custom.so.",
+      "expected_root_cause_code": "missing_runtime_dependency",
+      "predicted_root_cause_code": "missing_runtime_dependency",
+      "correct": true
+    },
+    {
+      "case_id": "dep_package_import_path",
+      "failure_type": "dependency_error",
+      "error_message": "Could not import package 'vendor_featurestore' from the configured module path.",
+      "expected_root_cause_code": "missing_runtime_dependency",
+      "predicted_root_cause_code": "missing_runtime_dependency",
+      "correct": true
+    },
+    {
+      "case_id": "unknown_read_only_fs",
+      "failure_type": "unknown_runtime_failure",
+      "error_message": "A read-only filesystem prevented the metric artifact from being persisted.",
+      "expected_root_cause_code": "unknown",
+      "predicted_root_cause_code": "unknown",
+      "correct": true
+    },
+    {
+      "case_id": "config_generic_constraint",
+      "failure_type": "configuration_error",
+      "error_message": "The estimator rejected initialization because a value constraint was violated.",
+      "expected_root_cause_code": "invalid_model_configuration",
+      "predicted_root_cause_code": "invalid_model_configuration",
+      "correct": true
+    }
+  ]
+}

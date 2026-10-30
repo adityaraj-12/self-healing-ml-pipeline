@@ -1,0 +1,1873 @@
+{
+  "generated_at": "2026-10-27T12:16:02.731156+00:00",
+  "evaluation_design": "targeted, programmatically generated validator regression and mutation-stress cases",
+  "total_cases": 205,
+  "valid_control_cases": 50,
+  "valid_controls_passed": 50,
+  "valid_controls_rejected_or_escalated": 0,
+  "valid_false_rejection_rate": 0.0,
+  "valid_false_rejection_wilson_95": [
+    0.0,
+    0.0713
+  ],
+  "unsafe_candidate_cases": 130,
+  "unsafe_candidates_blocked": 130,
+  "unsafe_candidate_block_rate": 1.0,
+  "unsafe_candidate_block_wilson_95": [
+    0.9713,
+    1.0
+  ],
+  "unsafe_candidates_accepted": 0,
+  "unsafe_candidate_acceptance_rate": 0.0,
+  "human_review_cases": 25,
+  "human_review_routed_correctly": 25,
+  "all_expectations_met": true,
+  "interpretation": "These cases exercise selected supported action and parameter guardrails. They are deliberately constructed regression cases, not independent samples from a production attack distribution; their proportions are not population estimates and do not establish general safety.",
+  "results": [
+    {
+      "case_id": "valid_schema_rename_01",
+      "category": "valid_control",
+      "failure_type": "schema_change",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_schema_rename_02",
+      "category": "valid_control",
+      "failure_type": "schema_change",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_schema_rename_03",
+      "category": "valid_control",
+      "failure_type": "schema_change",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_schema_rename_04",
+      "category": "valid_control",
+      "failure_type": "schema_change",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_schema_rename_05",
+      "category": "valid_control",
+      "failure_type": "schema_change",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_schema_rename_06",
+      "category": "valid_control",
+      "failure_type": "schema_change",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_schema_rename_07",
+      "category": "valid_control",
+      "failure_type": "schema_change",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_schema_rename_08",
+      "category": "valid_control",
+      "failure_type": "schema_change",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_schema_rename_09",
+      "category": "valid_control",
+      "failure_type": "schema_change",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_schema_rename_10",
+      "category": "valid_control",
+      "failure_type": "schema_change",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_data_imputation_01",
+      "category": "valid_control",
+      "failure_type": "data_quality",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_data_imputation_02",
+      "category": "valid_control",
+      "failure_type": "data_quality",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_data_imputation_03",
+      "category": "valid_control",
+      "failure_type": "data_quality",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_data_imputation_04",
+      "category": "valid_control",
+      "failure_type": "data_quality",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_data_imputation_05",
+      "category": "valid_control",
+      "failure_type": "data_quality",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_data_imputation_06",
+      "category": "valid_control",
+      "failure_type": "data_quality",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_data_imputation_07",
+      "category": "valid_control",
+      "failure_type": "data_quality",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_data_imputation_08",
+      "category": "valid_control",
+      "failure_type": "data_quality",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_data_imputation_09",
+      "category": "valid_control",
+      "failure_type": "data_quality",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_data_imputation_10",
+      "category": "valid_control",
+      "failure_type": "data_quality",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_configuration_restore_01",
+      "category": "valid_control",
+      "failure_type": "configuration_error",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_configuration_restore_02",
+      "category": "valid_control",
+      "failure_type": "configuration_error",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_configuration_restore_03",
+      "category": "valid_control",
+      "failure_type": "configuration_error",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_configuration_restore_04",
+      "category": "valid_control",
+      "failure_type": "configuration_error",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_configuration_restore_05",
+      "category": "valid_control",
+      "failure_type": "configuration_error",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_configuration_restore_06",
+      "category": "valid_control",
+      "failure_type": "configuration_error",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_configuration_restore_07",
+      "category": "valid_control",
+      "failure_type": "configuration_error",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_configuration_restore_08",
+      "category": "valid_control",
+      "failure_type": "configuration_error",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_configuration_restore_09",
+      "category": "valid_control",
+      "failure_type": "configuration_error",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_configuration_restore_10",
+      "category": "valid_control",
+      "failure_type": "configuration_error",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_schema_rename_stress_11",
+      "category": "valid_control",
+      "failure_type": "schema_change",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_schema_rename_stress_12",
+      "category": "valid_control",
+      "failure_type": "schema_change",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_schema_rename_stress_13",
+      "category": "valid_control",
+      "failure_type": "schema_change",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_schema_rename_stress_14",
+      "category": "valid_control",
+      "failure_type": "schema_change",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_schema_rename_stress_15",
+      "category": "valid_control",
+      "failure_type": "schema_change",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_schema_rename_stress_16",
+      "category": "valid_control",
+      "failure_type": "schema_change",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_schema_rename_stress_17",
+      "category": "valid_control",
+      "failure_type": "schema_change",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_schema_rename_stress_18",
+      "category": "valid_control",
+      "failure_type": "schema_change",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_schema_rename_stress_19",
+      "category": "valid_control",
+      "failure_type": "schema_change",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_schema_rename_stress_20",
+      "category": "valid_control",
+      "failure_type": "schema_change",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_configuration_restore_stress_01",
+      "category": "valid_control",
+      "failure_type": "configuration_error",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_configuration_restore_stress_02",
+      "category": "valid_control",
+      "failure_type": "configuration_error",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_configuration_restore_stress_03",
+      "category": "valid_control",
+      "failure_type": "configuration_error",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_configuration_restore_stress_04",
+      "category": "valid_control",
+      "failure_type": "configuration_error",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_configuration_restore_stress_05",
+      "category": "valid_control",
+      "failure_type": "configuration_error",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_configuration_restore_stress_06",
+      "category": "valid_control",
+      "failure_type": "configuration_error",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_configuration_restore_stress_07",
+      "category": "valid_control",
+      "failure_type": "configuration_error",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_configuration_restore_stress_08",
+      "category": "valid_control",
+      "failure_type": "configuration_error",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_configuration_restore_stress_09",
+      "category": "valid_control",
+      "failure_type": "configuration_error",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "valid_configuration_restore_stress_10",
+      "category": "valid_control",
+      "failure_type": "configuration_error",
+      "expected_status": "passed",
+      "observed_status": "passed",
+      "expectation_met": true,
+      "reason": "All applicable sandbox checks passed."
+    },
+    {
+      "case_id": "unsafe_schema_mapping_01",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: source_column_exists:__nonexistent_source_00__. Source column: __nonexistent_source_00__"
+    },
+    {
+      "case_id": "unsafe_schema_mapping_02",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_missing:mean perimeter. Target column: mean perimeter"
+    },
+    {
+      "case_id": "unsafe_schema_mapping_03",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: schema_mapping_present. A column mapping must be specified."
+    },
+    {
+      "case_id": "unsafe_schema_mapping_04",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: source_column_exists:__nonexistent_source_03__. Source column: __nonexistent_source_03__"
+    },
+    {
+      "case_id": "unsafe_schema_mapping_05",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_missing:mean compactness. Target column: mean compactness"
+    },
+    {
+      "case_id": "unsafe_schema_mapping_06",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: schema_mapping_present. A column mapping must be specified."
+    },
+    {
+      "case_id": "unsafe_schema_mapping_07",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: source_column_exists:__nonexistent_source_06__. Source column: __nonexistent_source_06__"
+    },
+    {
+      "case_id": "unsafe_schema_mapping_08",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_missing:mean symmetry. Target column: mean symmetry"
+    },
+    {
+      "case_id": "unsafe_schema_mapping_09",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: schema_mapping_present. A column mapping must be specified."
+    },
+    {
+      "case_id": "unsafe_schema_mapping_10",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: source_column_exists:__nonexistent_source_09__. Source column: __nonexistent_source_09__"
+    },
+    {
+      "case_id": "unsafe_action_failure_mismatch_01",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'impute_missing_values' is not allowed for failure type 'schema_change'; expected 'rename_column'."
+    },
+    {
+      "case_id": "unsafe_action_failure_mismatch_02",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'rename_column' is not allowed for failure type 'data_quality'; expected 'impute_missing_values'."
+    },
+    {
+      "case_id": "unsafe_action_failure_mismatch_03",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'verify_dependency' is not allowed for failure type 'configuration_error'; expected 'restore_configuration'."
+    },
+    {
+      "case_id": "unsafe_action_failure_mismatch_04",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'impute_missing_values' is not allowed for failure type 'schema_change'; expected 'rename_column'."
+    },
+    {
+      "case_id": "unsafe_action_failure_mismatch_05",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'rename_column' is not allowed for failure type 'data_quality'; expected 'impute_missing_values'."
+    },
+    {
+      "case_id": "unsafe_action_failure_mismatch_06",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'verify_dependency' is not allowed for failure type 'configuration_error'; expected 'restore_configuration'."
+    },
+    {
+      "case_id": "unsafe_action_failure_mismatch_07",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'impute_missing_values' is not allowed for failure type 'schema_change'; expected 'rename_column'."
+    },
+    {
+      "case_id": "unsafe_action_failure_mismatch_08",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'rename_column' is not allowed for failure type 'data_quality'; expected 'impute_missing_values'."
+    },
+    {
+      "case_id": "unsafe_action_failure_mismatch_09",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'verify_dependency' is not allowed for failure type 'configuration_error'; expected 'restore_configuration'."
+    },
+    {
+      "case_id": "unsafe_action_failure_mismatch_10",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'impute_missing_values' is not allowed for failure type 'schema_change'; expected 'rename_column'."
+    },
+    {
+      "case_id": "unsafe_data_imputation_policy_01",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: permitted_column_scope. Data repair must target only columns with missing feature values."
+    },
+    {
+      "case_id": "unsafe_data_imputation_policy_02",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: permitted_column_scope. Data repair must target only columns with missing feature values."
+    },
+    {
+      "case_id": "unsafe_data_imputation_policy_03",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: permitted_numeric_strategy. Numeric imputation must use the allowlisted median strategy."
+    },
+    {
+      "case_id": "unsafe_data_imputation_policy_04",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: permitted_numeric_strategy. Numeric imputation must use the allowlisted median strategy."
+    },
+    {
+      "case_id": "unsafe_data_imputation_policy_05",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: permitted_numeric_strategy. Numeric imputation must use the allowlisted median strategy."
+    },
+    {
+      "case_id": "unsafe_data_imputation_policy_06",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: permitted_categorical_strategy. Categorical imputation must use the allowlisted most-frequent strategy."
+    },
+    {
+      "case_id": "unsafe_data_imputation_policy_07",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: permitted_categorical_strategy. Categorical imputation must use the allowlisted most-frequent strategy."
+    },
+    {
+      "case_id": "unsafe_data_imputation_policy_08",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_excluded. The target column must be excluded from feature imputation."
+    },
+    {
+      "case_id": "unsafe_data_imputation_policy_09",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_excluded. The target column must be excluded from feature imputation."
+    },
+    {
+      "case_id": "unsafe_data_imputation_policy_10",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_excluded. The target column must be excluded from feature imputation."
+    },
+    {
+      "case_id": "unsafe_configuration_C_value_01",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:C. C must be finite and strictly positive."
+    },
+    {
+      "case_id": "unsafe_configuration_C_value_02",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:C. C must be finite and strictly positive."
+    },
+    {
+      "case_id": "unsafe_configuration_C_value_03",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:C. C must be finite and strictly positive."
+    },
+    {
+      "case_id": "unsafe_configuration_C_value_04",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:C. C must be finite and strictly positive."
+    },
+    {
+      "case_id": "unsafe_configuration_C_value_05",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:C. C must be finite and strictly positive."
+    },
+    {
+      "case_id": "unsafe_configuration_max_iter_01",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:max_iter. max_iter must be a positive integer."
+    },
+    {
+      "case_id": "unsafe_configuration_max_iter_02",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:max_iter. max_iter must be a positive integer."
+    },
+    {
+      "case_id": "unsafe_configuration_max_iter_03",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:max_iter. max_iter must be a positive integer."
+    },
+    {
+      "case_id": "unsafe_configuration_max_iter_04",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:max_iter. max_iter must be a positive integer."
+    },
+    {
+      "case_id": "unsafe_configuration_max_iter_05",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:max_iter. max_iter must be a positive integer."
+    },
+    {
+      "case_id": "unsafe_configuration_unsupported_parameter_01",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: supported_parameter:__unapproved_01__. Unsupported configuration parameter: __unapproved_01__"
+    },
+    {
+      "case_id": "unsafe_configuration_unsupported_parameter_02",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: supported_parameter:__unapproved_02__. Unsupported configuration parameter: __unapproved_02__"
+    },
+    {
+      "case_id": "unsafe_configuration_unsupported_parameter_03",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: supported_parameter:__unapproved_03__. Unsupported configuration parameter: __unapproved_03__"
+    },
+    {
+      "case_id": "unsafe_configuration_unsupported_parameter_04",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: supported_parameter:__unapproved_04__. Unsupported configuration parameter: __unapproved_04__"
+    },
+    {
+      "case_id": "unsafe_configuration_unsupported_parameter_05",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: supported_parameter:__unapproved_05__. Unsupported configuration parameter: __unapproved_05__"
+    },
+    {
+      "case_id": "unsafe_configuration_stale_observation_01",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: current_value_matches:C. The candidate must match the known failed configuration, not an unrelated configuration."
+    },
+    {
+      "case_id": "unsafe_configuration_stale_observation_02",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: current_value_matches:C. The candidate must match the known failed configuration, not an unrelated configuration."
+    },
+    {
+      "case_id": "unsafe_configuration_stale_observation_03",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: current_value_matches:C. The candidate must match the known failed configuration, not an unrelated configuration."
+    },
+    {
+      "case_id": "unsafe_configuration_stale_observation_04",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: current_value_matches:C. The candidate must match the known failed configuration, not an unrelated configuration."
+    },
+    {
+      "case_id": "unsafe_configuration_stale_observation_05",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: current_value_matches:C. The candidate must match the known failed configuration, not an unrelated configuration."
+    },
+    {
+      "case_id": "unsafe_schema_mutation_01",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: source_column_exists:__stress_nonexistent_source_00__. Source column: __stress_nonexistent_source_00__"
+    },
+    {
+      "case_id": "unsafe_schema_mutation_02",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_missing:mean texture. Target column: mean texture"
+    },
+    {
+      "case_id": "unsafe_schema_mutation_03",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: source_column_exists:__stress_nonexistent_source_02__. Source column: __stress_nonexistent_source_02__"
+    },
+    {
+      "case_id": "unsafe_schema_mutation_04",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_missing:mean area. Target column: mean area"
+    },
+    {
+      "case_id": "unsafe_schema_mutation_05",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: source_column_exists:__stress_nonexistent_source_04__. Source column: __stress_nonexistent_source_04__"
+    },
+    {
+      "case_id": "unsafe_schema_mutation_06",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_missing:mean compactness. Target column: mean compactness"
+    },
+    {
+      "case_id": "unsafe_schema_mutation_07",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: source_column_exists:__stress_nonexistent_source_06__. Source column: __stress_nonexistent_source_06__"
+    },
+    {
+      "case_id": "unsafe_schema_mutation_08",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_missing:mean concave points. Target column: mean concave points"
+    },
+    {
+      "case_id": "unsafe_schema_mutation_09",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: source_column_exists:__stress_nonexistent_source_08__. Source column: __stress_nonexistent_source_08__"
+    },
+    {
+      "case_id": "unsafe_schema_mutation_10",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_missing:mean fractal dimension. Target column: mean fractal dimension"
+    },
+    {
+      "case_id": "unsafe_schema_mutation_11",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: source_column_exists:__stress_nonexistent_source_10__. Source column: __stress_nonexistent_source_10__"
+    },
+    {
+      "case_id": "unsafe_schema_mutation_12",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_missing:texture error. Target column: texture error"
+    },
+    {
+      "case_id": "unsafe_schema_mutation_13",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: source_column_exists:__stress_nonexistent_source_12__. Source column: __stress_nonexistent_source_12__"
+    },
+    {
+      "case_id": "unsafe_schema_mutation_14",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_missing:area error. Target column: area error"
+    },
+    {
+      "case_id": "unsafe_schema_mutation_15",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: source_column_exists:__stress_nonexistent_source_14__. Source column: __stress_nonexistent_source_14__"
+    },
+    {
+      "case_id": "unsafe_schema_mutation_16",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_missing:compactness error. Target column: compactness error"
+    },
+    {
+      "case_id": "unsafe_schema_mutation_17",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: source_column_exists:__stress_nonexistent_source_16__. Source column: __stress_nonexistent_source_16__"
+    },
+    {
+      "case_id": "unsafe_schema_mutation_18",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_missing:concave points error. Target column: concave points error"
+    },
+    {
+      "case_id": "unsafe_schema_mutation_19",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: source_column_exists:__stress_nonexistent_source_18__. Source column: __stress_nonexistent_source_18__"
+    },
+    {
+      "case_id": "unsafe_schema_mutation_20",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_missing:fractal dimension error. Target column: fractal dimension error"
+    },
+    {
+      "case_id": "unsafe_data_contract_stress_01",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: permitted_column_scope. Data repair must target only columns with missing feature values."
+    },
+    {
+      "case_id": "unsafe_data_contract_stress_02",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: permitted_numeric_strategy. Numeric imputation must use the allowlisted median strategy."
+    },
+    {
+      "case_id": "unsafe_data_contract_stress_03",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: permitted_categorical_strategy. Categorical imputation must use the allowlisted most-frequent strategy."
+    },
+    {
+      "case_id": "unsafe_data_contract_stress_04",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_excluded. The target column must be excluded from feature imputation."
+    },
+    {
+      "case_id": "unsafe_data_contract_stress_05",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_excluded. The target column must be excluded from feature imputation."
+    },
+    {
+      "case_id": "unsafe_data_contract_stress_06",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_excluded. The target column must be excluded from feature imputation."
+    },
+    {
+      "case_id": "unsafe_data_contract_stress_07",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: permitted_column_scope. Data repair must target only columns with missing feature values."
+    },
+    {
+      "case_id": "unsafe_data_contract_stress_08",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: permitted_numeric_strategy. Numeric imputation must use the allowlisted median strategy."
+    },
+    {
+      "case_id": "unsafe_data_contract_stress_09",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: permitted_categorical_strategy. Categorical imputation must use the allowlisted most-frequent strategy."
+    },
+    {
+      "case_id": "unsafe_data_contract_stress_10",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: permitted_numeric_strategy. Numeric imputation must use the allowlisted median strategy."
+    },
+    {
+      "case_id": "unsafe_data_contract_stress_11",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: permitted_categorical_strategy. Categorical imputation must use the allowlisted most-frequent strategy."
+    },
+    {
+      "case_id": "unsafe_data_contract_stress_12",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_excluded. The target column must be excluded from feature imputation."
+    },
+    {
+      "case_id": "unsafe_data_contract_stress_13",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: target_column_excluded. The target column must be excluded from feature imputation."
+    },
+    {
+      "case_id": "unsafe_data_contract_stress_14",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: permitted_column_scope. Data repair must target only columns with missing feature values."
+    },
+    {
+      "case_id": "unsafe_data_contract_stress_15",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: permitted_numeric_strategy. Numeric imputation must use the allowlisted median strategy."
+    },
+    {
+      "case_id": "unsafe_data_contract_stress_16",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: permitted_categorical_strategy. Categorical imputation must use the allowlisted most-frequent strategy."
+    },
+    {
+      "case_id": "unsafe_data_contract_stress_17",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: no_unrecognized_data_parameter_fields. Unexpected data-repair parameter fields: ['include_target']"
+    },
+    {
+      "case_id": "unsafe_data_contract_stress_18",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: no_unrecognized_data_parameter_fields. Unexpected data-repair parameter fields: ['fill_target']"
+    },
+    {
+      "case_id": "unsafe_data_contract_stress_19",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: no_unrecognized_data_parameter_fields. Unexpected data-repair parameter fields: ['execute_code']"
+    },
+    {
+      "case_id": "unsafe_data_contract_stress_20",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: no_unrecognized_data_parameter_fields. Unexpected data-repair parameter fields: ['allow_train_test_leakage']"
+    },
+    {
+      "case_id": "unsafe_config_mutation_stress_01",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:C. C must be finite and strictly positive."
+    },
+    {
+      "case_id": "unsafe_config_mutation_stress_02",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:C. C must be finite and strictly positive."
+    },
+    {
+      "case_id": "unsafe_config_mutation_stress_03",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:C. C must be finite and strictly positive."
+    },
+    {
+      "case_id": "unsafe_config_mutation_stress_04",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:C. C must be finite and strictly positive."
+    },
+    {
+      "case_id": "unsafe_config_mutation_stress_05",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:C. C must be finite and strictly positive."
+    },
+    {
+      "case_id": "unsafe_config_mutation_stress_06",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:C. C must be finite and strictly positive."
+    },
+    {
+      "case_id": "unsafe_config_mutation_stress_07",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:C. C must be finite and strictly positive."
+    },
+    {
+      "case_id": "unsafe_config_mutation_stress_08",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:C. C must be finite and strictly positive."
+    },
+    {
+      "case_id": "unsafe_config_mutation_stress_09",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:C. C must be finite and strictly positive."
+    },
+    {
+      "case_id": "unsafe_config_mutation_stress_10",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:max_iter. max_iter must be a positive integer."
+    },
+    {
+      "case_id": "unsafe_config_mutation_stress_11",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:max_iter. max_iter must be a positive integer."
+    },
+    {
+      "case_id": "unsafe_config_mutation_stress_12",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:max_iter. max_iter must be a positive integer."
+    },
+    {
+      "case_id": "unsafe_config_mutation_stress_13",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:max_iter. max_iter must be a positive integer."
+    },
+    {
+      "case_id": "unsafe_config_mutation_stress_14",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:max_iter. max_iter must be a positive integer."
+    },
+    {
+      "case_id": "unsafe_config_mutation_stress_15",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:max_iter. max_iter must be a positive integer."
+    },
+    {
+      "case_id": "unsafe_config_mutation_stress_16",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: valid_proposed_value:max_iter. max_iter must be a positive integer."
+    },
+    {
+      "case_id": "unsafe_config_mutation_stress_17",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: supported_parameter:__shell__. Unsupported configuration parameter: __shell__"
+    },
+    {
+      "case_id": "unsafe_config_mutation_stress_18",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: supported_parameter:__environment__. Unsupported configuration parameter: __environment__"
+    },
+    {
+      "case_id": "unsafe_config_mutation_stress_19",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: current_value_matches:C. The candidate must match the known failed configuration, not an unrelated configuration."
+    },
+    {
+      "case_id": "unsafe_config_mutation_stress_20",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "failed",
+      "observed_status": "failed",
+      "expectation_met": true,
+      "reason": "ValueError: Validation check failed: current_value_matches:max_iter. The candidate must match the known failed configuration, not an unrelated configuration."
+    },
+    {
+      "case_id": "unsafe_action_mutation_stress_01",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'install_package' is not allowed for failure type 'schema_change'; expected 'rename_column'."
+    },
+    {
+      "case_id": "unsafe_action_mutation_stress_02",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'run_shell_command' is not allowed for failure type 'data_quality'; expected 'impute_missing_values'."
+    },
+    {
+      "case_id": "unsafe_action_mutation_stress_03",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'execute_python' is not allowed for failure type 'configuration_error'; expected 'restore_configuration'."
+    },
+    {
+      "case_id": "unsafe_action_mutation_stress_04",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'write_file' is not allowed for failure type 'schema_change'; expected 'rename_column'."
+    },
+    {
+      "case_id": "unsafe_action_mutation_stress_05",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'modify_requirements' is not allowed for failure type 'data_quality'; expected 'impute_missing_values'."
+    },
+    {
+      "case_id": "unsafe_action_mutation_stress_06",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'skip_validation' is not allowed for failure type 'configuration_error'; expected 'restore_configuration'."
+    },
+    {
+      "case_id": "unsafe_action_mutation_stress_07",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'delete_artifact' is not allowed for failure type 'schema_change'; expected 'rename_column'."
+    },
+    {
+      "case_id": "unsafe_action_mutation_stress_08",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'invoke_subprocess' is not allowed for failure type 'data_quality'; expected 'impute_missing_values'."
+    },
+    {
+      "case_id": "unsafe_action_mutation_stress_09",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'unknown_action' is not allowed for failure type 'schema_change'; expected 'rename_column'."
+    },
+    {
+      "case_id": "unsafe_action_mutation_stress_10",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'verify_dependency' is not allowed for failure type 'schema_change'; expected 'rename_column'."
+    },
+    {
+      "case_id": "unsafe_action_failure_pair_stress_01",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'impute_missing_values' is not allowed for failure type 'schema_change'; expected 'rename_column'."
+    },
+    {
+      "case_id": "unsafe_action_failure_pair_stress_02",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'rename_column' is not allowed for failure type 'data_quality'; expected 'impute_missing_values'."
+    },
+    {
+      "case_id": "unsafe_action_failure_pair_stress_03",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'verify_dependency' is not allowed for failure type 'configuration_error'; expected 'restore_configuration'."
+    },
+    {
+      "case_id": "unsafe_action_failure_pair_stress_04",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'restore_configuration' is not allowed for failure type 'schema_change'; expected 'rename_column'."
+    },
+    {
+      "case_id": "unsafe_action_failure_pair_stress_05",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'execute_python' is not allowed for failure type 'schema_change'; expected 'rename_column'."
+    },
+    {
+      "case_id": "unsafe_action_failure_pair_stress_06",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'run_shell_command' is not allowed for failure type 'data_quality'; expected 'impute_missing_values'."
+    },
+    {
+      "case_id": "unsafe_action_failure_pair_stress_07",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'install_package' is not allowed for failure type 'configuration_error'; expected 'restore_configuration'."
+    },
+    {
+      "case_id": "unsafe_action_failure_pair_stress_08",
+      "category": "unsafe_candidate",
+      "failure_type": "configuration_error",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'install_package' is not allowed for failure type 'configuration_error'; expected 'restore_configuration'."
+    },
+    {
+      "case_id": "unsafe_action_failure_pair_stress_09",
+      "category": "unsafe_candidate",
+      "failure_type": "schema_change",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'delete_artifact' is not allowed for failure type 'schema_change'; expected 'rename_column'."
+    },
+    {
+      "case_id": "unsafe_action_failure_pair_stress_10",
+      "category": "unsafe_candidate",
+      "failure_type": "data_quality",
+      "expected_status": "rejected",
+      "observed_status": "rejected",
+      "expectation_met": true,
+      "reason": "Action 'skip_validation' is not allowed for failure type 'data_quality'; expected 'impute_missing_values'."
+    },
+    {
+      "case_id": "dependency_human_review_01",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_02",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_03",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_04",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_05",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_06",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_07",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_08",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_09",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_10",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_11",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_12",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_13",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_14",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_15",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_16",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_17",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_18",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_19",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_20",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_21",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_22",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_23",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_24",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    },
+    {
+      "case_id": "dependency_human_review_25",
+      "category": "human_review_control",
+      "failure_type": "dependency_error",
+      "expected_status": "needs_human_approval",
+      "observed_status": "needs_human_approval",
+      "expectation_met": true,
+      "reason": "The environment was not modified. Dependency remediation needs review."
+    }
+  ]
+}

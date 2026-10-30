@@ -1,0 +1,41 @@
+case_id,project,source_title,source_url,source_note
+CASE-FZRCVW,Keras IO,Transformer-based recommendation example does not work with Keras 3.4.1,https://github.com/keras-team/keras-io/issues/1899,Example model receives a tensor with a different shape than the layer expects.
+CASE-7DC3NF,PyTorch,slice followed by view fails on a non-contiguous tensor,https://github.com/pytorch/pytorch/issues/136327,Tensor layout mismatch caused by a sequence of operations.
+CASE-99HD9M,scikit-learn,OneHotEncoder unknown-category warning is incorrect for columns without an infrequent category,https://github.com/scikit-learn/scikit-learn/issues/34822,Encoder warning semantics are inconsistent with actual transform behavior.
+CASE-YRADA4,Keras,No module named keras,https://github.com/keras-team/keras/issues/4889,A package import fails after installation through an environment manager.
+CASE-EUMLD7,TensorFlow,Shape mismatch,https://github.com/tensorflow/tensorflow/issues/72797,Layer input schema/shape disagreement.
+CASE-MS4GQV,scikit-learn,ClassifierChain does not accept NaN values even when base estimator supports them,https://github.com/scikit-learn/scikit-learn/issues/29856,Missing-value handling across wrapper and estimator.
+CASE-MRDK64,PyTorch,torch.nn.Linear input feature dimension mismatch,https://github.com/pytorch/pytorch/issues/172014,Input feature count differs from layer configuration.
+CASE-SUJPJ2,scikit-learn,Unknown label type: 'unknown' when class column has Pandas type Int64,https://github.com/scikit-learn/scikit-learn/issues/25073,A classifier rejects an integer target after DataFrame.convert_dtypes().
+CASE-EM8R3W,scikit-learn,RandomForest not passing feature names to trees and creating warnings,https://github.com/scikit-learn/scikit-learn/issues/26140,Feature-name metadata inconsistency in an estimator wrapper.
+CASE-62JZS2,scikit-learn,Shape mismatch if min_value is set with array-like input and some features contain all missing values,https://github.com/scikit-learn/scikit-learn/issues/29355,Imputation/schema edge case; source describes shape mismatch and all-missing features.
+CASE-ZZTXUG,Keras,Multi-GPU test_step model input shape mismatch,https://github.com/keras-team/keras/issues/21800,Distributed execution exposes an input-shape disagreement.
+CASE-NRBEN9,pandas,DtypeWarning message enhancement,https://github.com/pandas-dev/pandas/issues/58174,Mixed-type schema evidence is reported unclearly.
+CASE-3AA6FR,Apache Airflow,Edge worker import state corrupted after fork in a multithreaded process,https://github.com/apache/airflow/issues/65942,"Import failure is caused by process/runtime state, not necessarily a missing package."
+CASE-6AV4GY,TensorFlow,LSTM Input Shape Error,https://github.com/tensorflow/tensorflow/issues/42986,Recurrent layer input rank does not match its expected contract.
+CASE-SBGQ6G,tf-keras,LSTM receives a rank-four tensor but expects rank three,https://github.com/keras-team/tf-keras/issues/440,Recurrent layer receives an unexpected input rank.
+CASE-KCDC49,scikit-learn,Pandas dtypes boolean not supported in classification target,https://github.com/scikit-learn/scikit-learn/issues/17675,A classifier rejects a pandas nullable-boolean target column.
+CASE-36Z5Y5,Apache Airflow,Cannot update non-DAG packages imported from DAGs using git-sync,https://github.com/apache/airflow/issues/39203,Pipeline orchestration import-path/cache problem.
+CASE-RYYRWH,pandas,pd.api.types.pandas_dtype raises different exception with numpy=2.4.0,https://github.com/pandas-dev/pandas/issues/63484,Runtime/library-version interaction in dtype parsing.
+CASE-4Z7KT8,pandas,to_parquet can't handle mixed type columns,https://github.com/pandas-dev/pandas/issues/21228,Mixed input types affect persistence.
+CASE-A2UM2R,TensorFlow,Dense layer expects a different feature dimension,https://github.com/tensorflow/tensorflow/issues/37338,Layer input dimensionality differs from model expectation.
+CASE-FALHGC,PyTorch,Nested concurrent imports fail despite the GIL,https://github.com/pytorch/pytorch/issues/182560,Concurrent nested imports fail due to interpreter/module state.
+CASE-WQSPXA,TensorFlow,Incompatible layer error when adding a layer stored in a variable,https://github.com/tensorflow/tensorflow/issues/44048,Model construction/configuration causes an incompatible tensor shape.
+CASE-R5UVQW,scikit-learn,Nested Pipeline is not fitted,https://github.com/scikit-learn/scikit-learn/issues/32910,A nested pipeline component appears unfitted after an outer fit.
+CASE-QBZYDK,TensorFlow Lite,TFLite sign converts NaN inputs to zero while Keras preserves NaN,https://github.com/tensorflow/tensorflow/issues/120306,Non-finite input behavior differs between original and converted runtime.
+CASE-T7CEHN,Keras,Dense input shape does not match expected dimension,https://github.com/keras-team/keras/issues/19367,Model input dimensions and target/output contract disagree.
+CASE-APFCVP,PyTorch,torch.kron fails on non-contiguous inputs,https://github.com/pytorch/pytorch/issues/185650,Tensor layout/stride issue during an operation.
+CASE-KWVYGF,Keras,Keras import error with torch backend,https://github.com/keras-team/keras/issues/18955,Importing Keras under a configured Torch backend attempts to find TensorFlow.
+CASE-DNUWSM,TensorFlow,Sequential model input shape mismatch,https://github.com/tensorflow/tensorflow/issues/53728,Model input shape differs from the configured input contract.
+CASE-JSN995,pandas,Specify the column name in the mixed data type warning message,https://github.com/pandas-dev/pandas/issues/17989,Inconsistent data types are reported during CSV parsing.
+CASE-ECKHMS,TensorFlow,XLA top_k differs from eager execution when input contains NaN,https://github.com/tensorflow/tensorflow/issues/119438,Non-finite values interact with backend execution semantics.
+CASE-XXXRNN,mlflow,Impossible to launch server when a file is called mlflow.py,https://github.com/mlflow/mlflow/issues/18387,A project-local module shadows the installed package during server startup.
+CASE-YT7UDQ,scikit-learn,_check_feature_names raises UserWarning when accessing bagged estimators,https://github.com/scikit-learn/scikit-learn/issues/21599,Feature-name metadata inconsistency.
+CASE-HUGSJT,scikit-learn,Add missing value support for AdaBoost?,https://github.com/scikit-learn/scikit-learn/issues/30477,Missing-value behavior differs between composite and base estimators.
+CASE-NKVXSH,XGBoost,feature_names mismatch when using XGBoost with sklearn and ELI5,https://github.com/dmlc/xgboost/issues/2334,Prediction-time input feature names differ from training names.
+CASE-TSW67H,LightGBM,Lift restrictions on feature names with special JSON characters,https://github.com/lightgbm-org/LightGBM/issues/6202,Feature-name restrictions surface during model training.
+CASE-CV5NJR,scikit-learn,C regularization parameter error when assigned infinity,https://github.com/scikit-learn/scikit-learn/issues/29772,Invalid estimator parameter value.
+CASE-M7T645,Keras,Module not found errors after updating Keras libraries,https://github.com/keras-team/keras/issues/20103,Package import failures after environment updates.
+CASE-JZ48RU,scikit-learn,Inconsistent numbers of samples issue with fit_params in CalibratedClassifierCV,https://github.com/scikit-learn/scikit-learn/issues/23422,Sample-alignment problem in cross-validation fit parameters.
+CASE-7ENPZA,mlflow,Pinned requirements conflicting with UV dependencies,https://github.com/mlflow/mlflow/issues/22596,Dependency-resolution conflict during model logging.
+CASE-RAZYY9,scikit-learn,OneHotEncoder instance is not fitted after fitting a pipeline,https://github.com/scikit-learn/scikit-learn/issues/23735,A nested transformer’s fitted state is unexpectedly unavailable.

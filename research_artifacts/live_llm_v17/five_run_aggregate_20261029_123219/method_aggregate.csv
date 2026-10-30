@@ -1,0 +1,4 @@
+method,completed_runs,cases_across_runs,recovered_across_runs,overall_recovery_rate,mean_run_recovery_rate,run_recovery_sd_percentage_points,eligible_cases_across_runs,automatic_recoveries_among_eligible,conditional_automatic_recovery_rate,human_review_cases_across_runs,candidate_generation_failures,provider_rate_limit_failures,operational_failure_cases,mean_method_seconds_across_runs,mean_llm_generation_seconds_across_runs,mean_generation_plus_method_seconds_across_runs,validation_attempts_across_runs,mean_validation_pass_rate
+rule_based_gated,5,160,120,0.75,0.75,0.0,120,120,1.0,40,0,0,0,0.163678,,,120,1.0
+llm_direct_isolated,5,160,120,0.75,0.75,0.0,120,120,1.0,40,0,0,0,0.008745,11.688486,11.697232,0,
+llm_validated,5,160,120,0.75,0.75,0.0,120,120,1.0,40,0,0,0,0.079964,11.688486,11.768451,120,1.0

@@ -1,0 +1,231 @@
+{
+  "generated_at": "2026-10-28T06:07:40.526177+00:00",
+  "total_cases": 31,
+  "trial_records": 93,
+  "methods": {
+    "llm_direct_isolated": {
+      "cases": 31,
+      "recovered": 24,
+      "overall_recovery_rate": 0.7741935483870968,
+      "end_to_end_recovery_rate": 0.7741935483870968,
+      "automatically_eligible_cases": 24,
+      "automatic_recovery_rate": 1.0,
+      "human_review_required": 6,
+      "candidate_generation_failed": 0,
+      "provider_rate_limit_failures": 1,
+      "operational_failure_cases": 1,
+      "status_counts": {
+        "needs_human_approval": 6,
+        "provider_quota_exhausted": 1,
+        "recovered": 24
+      },
+      "validation_attempts": 0,
+      "validation_pass_rate": null,
+      "mean_method_duration_seconds": 0.008897133333333333,
+      "per_failure_type": {
+        "configuration_error": {
+          "cases": 8,
+          "recovered": 8,
+          "human_review_required": 0,
+          "operational_failures": 0,
+          "status_counts": {
+            "recovered": 8
+          }
+        },
+        "data_quality": {
+          "cases": 8,
+          "recovered": 8,
+          "human_review_required": 0,
+          "operational_failures": 0,
+          "status_counts": {
+            "recovered": 8
+          }
+        },
+        "dependency_error": {
+          "cases": 7,
+          "recovered": 0,
+          "human_review_required": 6,
+          "operational_failures": 1,
+          "status_counts": {
+            "needs_human_approval": 6,
+            "provider_quota_exhausted": 1
+          }
+        },
+        "schema_change": {
+          "cases": 8,
+          "recovered": 8,
+          "human_review_required": 0,
+          "operational_failures": 0,
+          "status_counts": {
+            "recovered": 8
+          }
+        }
+      },
+      "mean_llm_generation_seconds": 10.468021,
+      "mean_generation_plus_method_seconds": 10.819193,
+      "generation_timed_cases": 31,
+      "generation_plus_method_timed_cases": 30,
+      "mean_generation_seconds_for_valid_candidates": 10.810295,
+      "valid_candidate_generation_timed_cases": 30
+    },
+    "llm_validated": {
+      "cases": 31,
+      "recovered": 24,
+      "overall_recovery_rate": 0.7741935483870968,
+      "end_to_end_recovery_rate": 0.7741935483870968,
+      "automatically_eligible_cases": 24,
+      "automatic_recovery_rate": 1.0,
+      "human_review_required": 6,
+      "candidate_generation_failed": 0,
+      "provider_rate_limit_failures": 1,
+      "operational_failure_cases": 1,
+      "status_counts": {
+        "needs_human_approval": 6,
+        "provider_quota_exhausted": 1,
+        "recovered": 24
+      },
+      "validation_attempts": 24,
+      "validation_pass_rate": 1.0,
+      "mean_method_duration_seconds": 0.0854765,
+      "per_failure_type": {
+        "configuration_error": {
+          "cases": 8,
+          "recovered": 8,
+          "human_review_required": 0,
+          "operational_failures": 0,
+          "status_counts": {
+            "recovered": 8
+          }
+        },
+        "data_quality": {
+          "cases": 8,
+          "recovered": 8,
+          "human_review_required": 0,
+          "operational_failures": 0,
+          "status_counts": {
+            "recovered": 8
+          }
+        },
+        "dependency_error": {
+          "cases": 7,
+          "recovered": 0,
+          "human_review_required": 6,
+          "operational_failures": 1,
+          "status_counts": {
+            "needs_human_approval": 6,
+            "provider_quota_exhausted": 1
+          }
+        },
+        "schema_change": {
+          "cases": 8,
+          "recovered": 8,
+          "human_review_required": 0,
+          "operational_failures": 0,
+          "status_counts": {
+            "recovered": 8
+          }
+        }
+      },
+      "mean_llm_generation_seconds": 10.468021,
+      "mean_generation_plus_method_seconds": 10.895772,
+      "generation_timed_cases": 31,
+      "generation_plus_method_timed_cases": 30,
+      "mean_generation_seconds_for_valid_candidates": 10.810295,
+      "valid_candidate_generation_timed_cases": 30
+    },
+    "rule_based_gated": {
+      "cases": 31,
+      "recovered": 24,
+      "overall_recovery_rate": 0.7741935483870968,
+      "end_to_end_recovery_rate": 0.7741935483870968,
+      "automatically_eligible_cases": 24,
+      "automatic_recovery_rate": 1.0,
+      "human_review_required": 7,
+      "candidate_generation_failed": 0,
+      "provider_rate_limit_failures": 0,
+      "operational_failure_cases": 0,
+      "status_counts": {
+        "needs_human_approval": 7,
+        "recovered": 24
+      },
+      "validation_attempts": 24,
+      "validation_pass_rate": 1.0,
+      "mean_method_duration_seconds": 0.16718532258064514,
+      "per_failure_type": {
+        "configuration_error": {
+          "cases": 8,
+          "recovered": 8,
+          "human_review_required": 0,
+          "operational_failures": 0,
+          "status_counts": {
+            "recovered": 8
+          }
+        },
+        "data_quality": {
+          "cases": 8,
+          "recovered": 8,
+          "human_review_required": 0,
+          "operational_failures": 0,
+          "status_counts": {
+            "recovered": 8
+          }
+        },
+        "dependency_error": {
+          "cases": 7,
+          "recovered": 0,
+          "human_review_required": 7,
+          "operational_failures": 0,
+          "status_counts": {
+            "needs_human_approval": 7
+          }
+        },
+        "schema_change": {
+          "cases": 8,
+          "recovered": 8,
+          "human_review_required": 0,
+          "operational_failures": 0,
+          "status_counts": {
+            "recovered": 8
+          }
+        }
+      },
+      "mean_repair_planning_seconds": 9.3e-05,
+      "mean_planning_plus_method_seconds": 0.167279
+    }
+  },
+  "interpretation_note": "Overall recovery rate uses all recorded method rows as its denominator. Conditional automatic recovery excludes human-review cases and recorded operational/generation failures. Scenario repeats are repeated observations of fixed project-authored templates, not independent real-world incidents.",
+  "diagnosis_evaluation": {
+    "evaluated_cases": 31,
+    "correct": 31,
+    "accuracy": 1.0
+  },
+  "run_metadata": {
+    "run_id": "20261028_060141_426075",
+    "run_status": "stopped_provider_quota",
+    "stop_reason": "provider_daily_quota_exhausted",
+    "repeats_requested": 1,
+    "scenario_templates_requested": 32,
+    "planned_case_executions": 32,
+    "completed_case_executions": 31,
+    "planned_trial_records": 96,
+    "written_trial_records": 93,
+    "completion_fraction": 0.96875,
+    "case_execution_errors": 0,
+    "capture_filename": "llm_io.jsonl",
+    "raw_results_filename": "repeated_trials_20261028_060141_426075.jsonl",
+    "manifest_filename": "llm_run_manifest_20261028_060141_426075.json",
+    "capture_audit": {
+      "capture_filename": "llm_io.jsonl",
+      "records": 33,
+      "malformed_jsonl_lines": 0,
+      "status_counts": {
+        "request_failed": 2,
+        "response_received": 31
+      },
+      "rate_limit_failed_interactions": 2,
+      "first_interaction_utc": "2026-10-28T06:01:44.092075+00:00",
+      "last_interaction_utc": "2026-10-28T06:07:40.518140+00:00"
+    }
+  },
+  "llm_run_manifest": "llm_run_manifest_20261028_060141_426075.json"
+}

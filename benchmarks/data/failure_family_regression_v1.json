@@ -1,0 +1,246 @@
+{
+  "dataset_id": "failure-family-regression-v1",
+  "purpose": "Developer-authored regression cases for family detection. This is not an independent, blind, or production evaluation.",
+  "selection_note": "Cases were authored from the current failure taxonomy to test expected family patterns and abstention on unmatched errors. Do not describe these cases as unseen external data.",
+  "cases": [
+    {
+      "case_id": "schema_explicit_mismatch",
+      "exception_type": "ValueError",
+      "message": "Schema mismatch: expected 30 feature columns but received 29",
+      "stage": "feature_validation",
+      "expected": "schema_change"
+    },
+    {
+      "case_id": "schema_missing_unexpected",
+      "exception_type": "ValueError",
+      "message": "Schema mismatch | missing=['mean radius'] | unexpected=['radius_mean']",
+      "stage": "preprocessing",
+      "expected": "schema_change"
+    },
+    {
+      "case_id": "schema_column_not_found",
+      "exception_type": "ValueError",
+      "message": "Column patient_age not found in the input frame",
+      "stage": "feature_validation",
+      "expected": "schema_change"
+    },
+    {
+      "case_id": "schema_feature_names_fit",
+      "exception_type": "ValueError",
+      "message": "Feature names must match those that were passed during fit",
+      "stage": "model_inference",
+      "expected": "schema_change"
+    },
+    {
+      "case_id": "schema_keyerror_feature",
+      "exception_type": "KeyError",
+      "message": "'feature_17'",
+      "stage": "feature_validation",
+      "expected": "schema_change"
+    },
+    {
+      "case_id": "schema_column_absent",
+      "exception_type": "ValueError",
+      "message": "Input columns are missing: ['x3']",
+      "stage": "data_preparation",
+      "expected": "schema_change"
+    },
+    {
+      "case_id": "data_nan",
+      "exception_type": "ValueError",
+      "message": "Input contains NaN values",
+      "stage": "preprocessing",
+      "expected": "data_quality"
+    },
+    {
+      "case_id": "data_null",
+      "exception_type": "ValueError",
+      "message": "Feature matrix contains null values",
+      "stage": "preprocessing",
+      "expected": "data_quality"
+    },
+    {
+      "case_id": "data_positive_infinity",
+      "exception_type": "ValueError",
+      "message": "Positive infinity found in numeric feature block",
+      "stage": "feature_validation",
+      "expected": "data_quality"
+    },
+    {
+      "case_id": "data_nonfinite",
+      "exception_type": "ValueError",
+      "message": "Feature values must be finite; non-finite value encountered",
+      "stage": "feature_validation",
+      "expected": "data_quality"
+    },
+    {
+      "case_id": "data_object_dtype",
+      "exception_type": "TypeError",
+      "message": "Input has object dtype where numeric features are required",
+      "stage": "preprocessing",
+      "expected": "data_quality"
+    },
+    {
+      "case_id": "data_parse_float",
+      "exception_type": "ValueError",
+      "message": "Could not convert string to float: 'unknown'",
+      "stage": "preprocessing",
+      "expected": "data_quality"
+    },
+    {
+      "case_id": "data_incompatible_dtype",
+      "exception_type": "TypeError",
+      "message": "Incompatible dtype when assigning values to numeric feature",
+      "stage": "preprocessing",
+      "expected": "data_quality"
+    },
+    {
+      "case_id": "data_string_numeric",
+      "exception_type": "ValueError",
+      "message": "String values were found where numeric data is expected",
+      "stage": "data_ingestion",
+      "expected": "data_quality"
+    },
+    {
+      "case_id": "config_invalid_parameter_exception",
+      "exception_type": "InvalidParameterError",
+      "message": "The 'C' parameter of LogisticRegression must be a positive float",
+      "stage": "model_training",
+      "expected": "configuration_error"
+    },
+    {
+      "case_id": "config_invalid_parameter_phrase",
+      "exception_type": "ValueError",
+      "message": "Invalid parameter C for estimator",
+      "stage": "model_training",
+      "expected": "configuration_error"
+    },
+    {
+      "case_id": "config_parameter_must",
+      "exception_type": "ValueError",
+      "message": "The 'solver' parameter must be one of {'lbfgs', 'liblinear'}",
+      "stage": "model_training",
+      "expected": "configuration_error"
+    },
+    {
+      "case_id": "config_unexpected_kwarg",
+      "exception_type": "TypeError",
+      "message": "__init__() got an unexpected keyword argument 'warm_start_mode'",
+      "stage": "model_initialization",
+      "expected": "configuration_error"
+    },
+    {
+      "case_id": "config_unsupported_parameter",
+      "exception_type": "ValueError",
+      "message": "Unsupported parameter 'max_leaves' in this estimator",
+      "stage": "model_training",
+      "expected": "configuration_error"
+    },
+    {
+      "case_id": "config_invalid_configuration",
+      "exception_type": "ValueError",
+      "message": "Invalid configuration: n_estimators cannot be zero",
+      "stage": "model_training",
+      "expected": "configuration_error"
+    },
+    {
+      "case_id": "dependency_module_not_found",
+      "exception_type": "ModuleNotFoundError",
+      "message": "No module named 'feature_store_client'",
+      "stage": "initialization",
+      "expected": "dependency_error"
+    },
+    {
+      "case_id": "dependency_cannot_import_name",
+      "exception_type": "ImportError",
+      "message": "cannot import name 'PipelineClient' from 'ml_pipeline_sdk'",
+      "stage": "initialization",
+      "expected": "dependency_error"
+    },
+    {
+      "case_id": "dependency_dll_load",
+      "exception_type": "ImportError",
+      "message": "DLL load failed while importing _native_ops",
+      "stage": "initialization",
+      "expected": "dependency_error"
+    },
+    {
+      "case_id": "dependency_shared_object",
+      "exception_type": "OSError",
+      "message": "libcustom_runtime.so: shared object file not found",
+      "stage": "model_loading",
+      "expected": "dependency_error"
+    },
+    {
+      "case_id": "dependency_version_conflict",
+      "exception_type": "RuntimeError",
+      "message": "Dependency conflict: installed library version is incompatible",
+      "stage": "initialization",
+      "expected": "dependency_error"
+    },
+    {
+      "case_id": "dependency_import_failed",
+      "exception_type": "ImportError",
+      "message": "Failed to import optional runtime extension",
+      "stage": "initialization",
+      "expected": "dependency_error"
+    },
+    {
+      "case_id": "unknown_model_artifact_missing",
+      "exception_type": "FileNotFoundError",
+      "message": "Model artifact file not found at configured path",
+      "stage": "model_loading",
+      "expected": "unknown_runtime_failure"
+    },
+    {
+      "case_id": "unknown_artifact_keyerror",
+      "exception_type": "KeyError",
+      "message": "'artifact_id'",
+      "stage": "artifact_verification",
+      "expected": "unknown_runtime_failure"
+    },
+    {
+      "case_id": "unknown_permission",
+      "exception_type": "PermissionError",
+      "message": "Permission denied while reading model metadata",
+      "stage": "model_loading",
+      "expected": "unknown_runtime_failure"
+    },
+    {
+      "case_id": "unknown_timeout",
+      "exception_type": "TimeoutError",
+      "message": "Remote request timed out after 30 seconds",
+      "stage": "data_loading",
+      "expected": "unknown_runtime_failure"
+    },
+    {
+      "case_id": "unknown_memory",
+      "exception_type": "MemoryError",
+      "message": "Unable to allocate working array",
+      "stage": "model_training",
+      "expected": "unknown_runtime_failure"
+    },
+    {
+      "case_id": "unknown_child_process",
+      "exception_type": "RuntimeError",
+      "message": "Child process exited with signal 9 before returning a result",
+      "stage": "model_training",
+      "expected": "unknown_runtime_failure"
+    },
+    {
+      "case_id": "unknown_json",
+      "exception_type": "JSONDecodeError",
+      "message": "Malformed JSON in external metadata response",
+      "stage": "data_loading",
+      "expected": "unknown_runtime_failure"
+    },
+    {
+      "case_id": "unknown_connection",
+      "exception_type": "ConnectionError",
+      "message": "Connection refused by upstream service",
+      "stage": "data_loading",
+      "expected": "unknown_runtime_failure"
+    }
+  ],
+  "detector_implementation_sha256": "48034d5eab01038512514dbadf6507e349281dc47d49c0ea50cb0dc0936b171e"
+}

@@ -1,0 +1,73 @@
+[15:45:51 UTC] [INFO] PREFLIGHT PASSED | SDK pin and provider configuration are present.
+[15:45:51 UTC] [INFO] RUN ID | 20261027_154551_252953
+[15:45:51 UTC] [INFO] MODEL | openai/gpt-oss-20b
+[15:45:51 UTC] [INFO] ENDPOINT | https://api.groq.com/openai/v1
+[15:45:51 UTC] [INFO] CAPTURE | /Volumes/PortableSSD/Learning/M. Tech/Paper 2/self-healing-ml-pipeline-v17-upgrade/self-healing-ml-pipeline/research_artifacts/live_llm_v17/full_02/llm_io.jsonl
+[15:45:51 UTC] [INFO] RAW RESULTS | /Volumes/PortableSSD/Learning/M. Tech/Paper 2/self-healing-ml-pipeline-v17-upgrade/self-healing-ml-pipeline/research_artifacts/live_llm_v17/full_02/repeated_trials_20261027_154551_252953.jsonl
+[15:45:51 UTC] [INFO] SUMMARY | /Volumes/PortableSSD/Learning/M. Tech/Paper 2/self-healing-ml-pipeline-v17-upgrade/self-healing-ml-pipeline/research_artifacts/live_llm_v17/full_02/repeated_trials_summary_20261027_154551_252953.json
+[15:45:51 UTC] [INFO] RUN START | pipeline fault injection -> incident -> RCA -> deterministic candidate -> LLM candidate -> direct/gated validation/recovery -> save results
+[15:45:51 UTC] [INFO] PLAN | templates=32 | repeats=1 | case executions=32 | expected method rows=96
+[15:45:51 UTC] [INFO] POLICY | dependency modifications require human review; the LLM never authorizes arbitrary code, shell commands, or package installation.
+[15:45:51 UTC] [INFO] CASE 1/32 | schema_01 | family=schema_change | repeat=1/1
+[15:45:51 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:45:52 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-EA0518B8 | detected_family=schema_change | elapsed=0.798s
+[15:45:52 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:45:52 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=schema_rename:mean_radius->mean radius
+[15:45:52 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:45:52 UTC] [INFO] STEP 3/6 COMPLETE | action=rename_column | planning=0.000158s
+[15:45:52 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+LLM repair candidate validated structurally on attempt 1.
+[15:45:59 UTC] [INFO] STEP 4/6 COMPLETE | candidate=RC-46CABF99 | action=rename_column | generation=7.392s
+[15:45:59 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:45:59 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:45:59 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.188777s
+[15:45:59 UTC] [INFO]   METHOD START | llm_direct_isolated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+[15:45:59 UTC] [INFO]   METHOD COMPLETE | llm_direct_isolated | status=recovered | duration=0.009374s
+[15:45:59 UTC] [INFO]   METHOD START | llm_validated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:45:59 UTC] [INFO]   METHOD COMPLETE | llm_validated | status=recovered | duration=0.096901s
+[15:45:59 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:45:59 UTC] [INFO] CASE COMPLETE | schema_01 | rows_saved=3 | elapsed=8.494s
+[15:45:59 UTC] [INFO] CASE 2/32 | schema_02 | family=schema_change | repeat=1/1
+[15:45:59 UTC] [INFO] STEP 1/6 | Injecting the configured fault and collecting the incident.
+[15:46:00 UTC] [INFO] STEP 1/6 COMPLETE | incident=INC-BD541EA5 | detected_family=schema_change | elapsed=0.904s
+[15:46:00 UTC] [INFO] STEP 2/6 | Running rule-based root-cause analysis.
+[15:46:00 UTC] [INFO] STEP 2/6 COMPLETE | root_cause=schema_rename:mean_texture->mean texture
+[15:46:00 UTC] [INFO] STEP 3/6 | Planning the deterministic rule-based repair candidate.
+[15:46:00 UTC] [INFO] STEP 3/6 COMPLETE | action=rename_column | planning=0.000103s
+[15:46:00 UTC] [INFO] STEP 4/6 | Requesting an LLM repair candidate | model=openai/gpt-oss-20b
+[15:46:01 UTC] [ERROR] Provider daily quota is exhausted (TPD/RPD). Stopping new LLM calls; the benchmark will save a partial result.
+[15:46:01 UTC] [ERROR] STEP 4/6 STOPPED | provider_quota_exhausted: Provider daily token/request quota exhausted; no immediate retry attempted.
+[15:46:01 UTC] [INFO] STEP 5/6 | Evaluating repair paths; dependency changes remain review-only.
+[15:46:01 UTC] [INFO]   METHOD START | rule_based_gated | candidate_action=rename_column
+Data splited.
+Training Model...
+Applying StandardScaler
+Evaluating Model...
+Evaluating Model...
+[15:46:02 UTC] [INFO]   METHOD COMPLETE | rule_based_gated | status=recovered | duration=0.208884s
+[15:46:02 UTC] [INFO] STEP 6/6 | Saving trial-level results for this case.
+[15:46:02 UTC] [INFO] CASE COMPLETE | schema_02 | rows_saved=3 | elapsed=2.399s
+[15:46:02 UTC] [WARNING] RUN WILL STOP AFTER THIS CASE to prevent repeated requests against an exhausted or delayed provider quota.
+[15:46:02 UTC] [INFO] RUN SUMMARY | {"capture_audit": {"capture_filename": "llm_io.jsonl", "first_interaction_utc": "2026-10-27T15:45:59.490376+00:00", "last_interaction_utc": "2026-10-27T15:46:01.974412+00:00", "malformed_jsonl_lines": 0, "rate_limit_failed_interactions": 1, "records": 2, "status_counts": {"request_failed": 1, "response_received": 1}}, "capture_filename": "llm_io.jsonl", "case_execution_errors": 0, "completed_case_executions": 2, "completion_fraction": 0.0625, "manifest_filename": "llm_run_manifest_20261027_154551_252953.json", "planned_case_executions": 32, "planned_trial_records": 96, "raw_results_filename": "repeated_trials_20261027_154551_252953.jsonl", "repeats_requested": 1, "run_id": "20261027_154551_252953", "run_status": "stopped_provider_quota", "scenario_templates_requested": 32, "stop_reason": "provider_daily_quota_exhausted", "written_trial_records": 6}
+[15:46:02 UTC] [INFO] METHOD SUMMARY | llm_direct_isolated | recovered=1/2 | overall=0.5 | eligible=1 | conditional_automatic_recovery=1.0 | human_review=0 | provider_rate_limit_failures=1
+[15:46:02 UTC] [INFO] METHOD SUMMARY | llm_validated | recovered=1/2 | overall=0.5 | eligible=1 | conditional_automatic_recovery=1.0 | human_review=0 | provider_rate_limit_failures=1
+[15:46:02 UTC] [INFO] METHOD SUMMARY | rule_based_gated | recovered=2/2 | overall=1.0 | eligible=2 | conditional_automatic_recovery=1.0 | human_review=0 | provider_rate_limit_failures=0
+[15:46:02 UTC] [INFO] RAW RESULTS SAVED | /Volumes/PortableSSD/Learning/M. Tech/Paper 2/self-healing-ml-pipeline-v17-upgrade/self-healing-ml-pipeline/research_artifacts/live_llm_v17/full_02/repeated_trials_20261027_154551_252953.jsonl
+[15:46:02 UTC] [INFO] SUMMARY SAVED | /Volumes/PortableSSD/Learning/M. Tech/Paper 2/self-healing-ml-pipeline-v17-upgrade/self-healing-ml-pipeline/research_artifacts/live_llm_v17/full_02/repeated_trials_summary_20261027_154551_252953.json
+[15:46:02 UTC] [INFO] MANIFEST SAVED | /Volumes/PortableSSD/Learning/M. Tech/Paper 2/self-healing-ml-pipeline-v17-upgrade/self-healing-ml-pipeline/research_artifacts/live_llm_v17/full_02/llm_run_manifest_20261027_154551_252953.json
+[15:46:02 UTC] [INFO] CAPTURE SAVED | /Volumes/PortableSSD/Learning/M. Tech/Paper 2/self-healing-ml-pipeline-v17-upgrade/self-healing-ml-pipeline/research_artifacts/live_llm_v17/full_02/llm_io.jsonl
+[15:46:02 UTC] [ERROR] RUN INCOMPLETE | provider_daily_quota_exhausted. Existing rows and summary have been saved; no more LLM requests were issued after the stop condition.

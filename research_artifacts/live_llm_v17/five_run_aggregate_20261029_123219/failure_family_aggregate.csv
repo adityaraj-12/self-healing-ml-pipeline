@@ -1,0 +1,13 @@
+method,failure_type,cases,recovered,human_review_cases,operational_failure_cases,overall_recovery_rate
+llm_direct_isolated,configuration_error,40,40,0,0,1.0
+llm_validated,configuration_error,40,40,0,0,1.0
+rule_based_gated,configuration_error,40,40,0,0,1.0
+llm_direct_isolated,data_quality,40,40,0,0,1.0
+llm_validated,data_quality,40,40,0,0,1.0
+rule_based_gated,data_quality,40,40,0,0,1.0
+llm_direct_isolated,dependency_error,40,0,40,0,0.0
+llm_validated,dependency_error,40,0,40,0,0.0
+rule_based_gated,dependency_error,40,0,40,0,0.0
+llm_direct_isolated,schema_change,40,40,0,0,1.0
+llm_validated,schema_change,40,40,0,0,1.0
+rule_based_gated,schema_change,40,40,0,0,1.0

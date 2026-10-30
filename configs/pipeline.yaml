@@ -1,0 +1,20 @@
+dataset:
+  name: breast_cancer
+
+split:
+  test_size: 0.2
+  random_state: 42
+
+model:
+  name: logistic_regression
+  C: 1.0
+  max_iter: 1000
+
+artifacts:
+  model: artifacts/models/model.joblib
+  schema: artifacts/schemas/base_schema.json
+  metrics: artifacts/metrics/metrics.json
+  log: artifacts/logs/pipeline.log
+  incidents: artifacts/incidents/incidents.jsonl
+  rca: artifacts/incidents/rca.jsonl
+  repair_candidates: artifacts/incidents/repair_candidates.jsonl
