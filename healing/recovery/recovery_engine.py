@@ -28,6 +28,76 @@ class RecoveryEngine:
         with open("configs/failures.yaml", "r") as f:
             self.failure_config = yaml.safe_load(f)
 
+    def assess_recovery_eligibility(
+        self, incident, candidate, validation_report
+    ):
+        """Assess recovery eligibility without executing or modifying anything."""
+
+        if candidate.get("incident_id") != incident.incident_id:
+            return {
+                "eligible": False,
+                "status": "blocked",
+                "reason": (
+                    "Candidate incident_id does not match "
+                    "the recovery incident."
+                ),
+            }
+
+        if (
+            validation_report.get("candidate_id")
+            != candidate.get("candidate_id")
+            or validation_report.get("incident_id")
+            != incident.incident_id
+            or validation_report.get("failure_type")
+            != candidate.get("failure_type")
+        ):
+            return {
+                "eligible": False,
+                "status": "blocked",
+                "reason": (
+                    "Validation report does not match "
+                    "the candidate and incident."
+                ),
+            }
+
+        failure_type = incident.failure_type
+
+        if candidate.get("failure_type") != failure_type:
+            return {
+                "eligible": False,
+                "status": "blocked",
+                "reason": "Failure type mismatch.",
+            }
+
+        if (
+            validation_report.get("status") == "needs_human_approval"
+            or candidate.get("requires_human_approval", False)
+            or failure_type == "dependency_error"
+        ):
+            return {
+                "eligible": False,
+                "status": "needs_human_approval",
+                "reason": (
+                    "Human approval is required. "
+                    "No repair has been applied."
+                ),
+            }
+
+        if validation_report.get("status") != "passed":
+            return {
+                "eligible": False,
+                "status": "blocked",
+                "reason": (
+                    "Candidate did not pass sandbox validation."
+                ),
+            }
+
+        return {
+            "eligible": True,
+            "status": "eligible",
+            "reason": "Candidate passed the recovery eligibility checks.",
+        }
+
     def recover(self, incident, candidate, validation_report):
         start = perf_counter()
 
@@ -40,59 +110,14 @@ class RecoveryEngine:
             ).isoformat(),
         }
 
-        # ------------------------------------------------
-        # 1. Verify the validation result and its identity.
-        # ------------------------------------------------
+        eligibility = self.assess_recovery_eligibility(
+            incident, candidate, validation_report
+        )
 
-        # 1. Verify the validation report belongs to this incident.
-        if (
-            validation_report.get("candidate_id")
-            != candidate.get("candidate_id")
-            or validation_report.get("incident_id")
-            != incident.incident_id
-        ):
+        if not eligibility["eligible"]:
             result.update({
-                "status": "blocked",
-                "reason": (
-                    "Validation report does not match "
-                    "the candidate and incident."
-                )
-            })
-            return self._finish(result, start)
-
-        # 2. Reject a candidate for the wrong failure type.
-        failure_type = incident.failure_type
-
-        if candidate.get("failure_type") != failure_type:
-            result.update({
-                "status": "blocked",
-                "reason": "Failure type mismatch."
-            })
-            return self._finish(result, start)
-
-        # 3. Human approval must be preserved as a distinct outcome.
-        if (
-            validation_report.get("status")
-            == "needs_human_approval"
-            or candidate.get("requires_human_approval", False)
-            or failure_type == "dependency_error"
-        ):
-            result.update({
-                "status": "needs_human_approval",
-                "reason": (
-                    "Human approval is required. "
-                    "No repair has been applied."
-                )
-            })
-            return self._finish(result, start)
-
-        # 4. Every other repair must pass validation.
-        if validation_report.get("status") != "passed":
-            result.update({
-                "status": "blocked",
-                "reason": (
-                    "Candidate did not pass sandbox validation."
-                )
+                "status": eligibility["status"],
+                "reason": eligibility["reason"],
             })
             return self._finish(result, start)
 

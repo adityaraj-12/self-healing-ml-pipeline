@@ -1,5 +1,7 @@
 from types import SimpleNamespace
 
+import pytest
+
 from healing.recovery.recovery_engine import RecoveryEngine
 
 
@@ -48,12 +50,66 @@ def test_recovery_blocks_candidate_when_validation_fails():
         "status": "failed",
         "candidate_id": candidate["candidate_id"],
         "incident_id": incident.incident_id,
+        "failure_type": incident.failure_type,
         "reason": "Sandbox checks failed.",
     }
 
     result = engine.recover(incident, candidate, report)
 
     assert result["status"] == "blocked"
+
+
+@pytest.mark.parametrize(
+    ("candidate_incident_id", "candidate_failure_type", "expected_reason"),
+    [
+        ("INC-OTHER", "data_quality", "incident_id"),
+        ("INC-TEST", "schema_change", "Failure type mismatch"),
+    ],
+)
+def test_recovery_blocks_candidate_identity_mismatch(
+    candidate_incident_id,
+    candidate_failure_type,
+    expected_reason,
+):
+    engine = RecoveryEngine()
+    incident = make_incident()
+
+    candidate = make_candidate(
+        incident_id=candidate_incident_id,
+        failure_type=candidate_failure_type,
+    )
+
+    # Simulate a passed report that matches the candidate ID and records
+    # the candidate family, but cannot override the candidate's own binding.
+    report = {
+        "status": "passed",
+        "candidate_id": candidate["candidate_id"],
+        "incident_id": incident.incident_id,
+        "failure_type": candidate["failure_type"],
+    }
+
+    result = engine.recover(incident, candidate, report)
+
+    assert result["status"] == "blocked"
+    assert expected_reason in result["reason"]
+
+
+def test_recovery_blocks_validation_report_with_wrong_failure_type():
+    engine = RecoveryEngine()
+    incident = make_incident()
+    candidate = make_candidate()
+
+    report = {
+        "status": "passed",
+        "candidate_id": candidate["candidate_id"],
+        "incident_id": incident.incident_id,
+        "failure_type": "schema_change",
+    }
+
+    result = engine.recover(incident, candidate, report)
+
+    assert result["status"] == "blocked"
+    assert "does not match" in result["reason"]
 
 
 def test_recovery_blocks_mismatched_validation_report():
@@ -65,6 +121,7 @@ def test_recovery_blocks_mismatched_validation_report():
         "status": "passed",
         "candidate_id": "RC-OTHER",
         "incident_id": incident.incident_id,
+        "failure_type": incident.failure_type,
     }
 
     result = engine.recover(incident, candidate, report)
@@ -87,6 +144,7 @@ def test_dependency_repair_requires_human_approval():
         "status": "needs_human_approval",
         "candidate_id": candidate["candidate_id"],
         "incident_id": incident.incident_id,
+        "failure_type": incident.failure_type,
     }
 
     result = engine.recover(incident, candidate, report)
@@ -105,6 +163,7 @@ def test_candidate_policy_can_require_approval():
         "status": "passed",
         "candidate_id": candidate["candidate_id"],
         "incident_id": incident.incident_id,
+        "failure_type": incident.failure_type,
     }
 
     result = engine.recover(incident, candidate, report)
@@ -133,6 +192,7 @@ def test_orchestrator_does_not_execute_unvalidated_candidate():
             return {
                 "candidate_id": candidate["candidate_id"],
                 "incident_id": incident.incident_id,
+                "failure_type": incident.failure_type,
                 "status": "failed",
                 "reason": "Deliberately failed safety check.",
             }
@@ -181,6 +241,7 @@ def test_orchestrator_executes_only_after_validation_passes():
             return {
                 "candidate_id": candidate["candidate_id"],
                 "incident_id": incident.incident_id,
+                "failure_type": incident.failure_type,
                 "status": "passed",
             }
 
@@ -232,6 +293,7 @@ def test_orchestrator_never_executes_dependency_repair():
             return {
                 "candidate_id": candidate["candidate_id"],
                 "incident_id": incident.incident_id,
+                "failure_type": incident.failure_type,
                 "status": "needs_human_approval",
             }
 

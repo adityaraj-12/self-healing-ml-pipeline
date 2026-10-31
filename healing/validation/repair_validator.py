@@ -546,6 +546,29 @@ class RepairValidator:
             "checks": checks
         }
 
+        # Bind the candidate to the exact incident before workspace creation.
+        if candidate.get("incident_id") != incident.incident_id:
+            report.update({
+                "status": "rejected",
+                "reason": (
+                    "Candidate incident_id does not match "
+                    "the supplied incident."
+                )
+            })
+            report["duration_seconds"] = perf_counter() - start
+            return report
+
+        if candidate.get("failure_type") != incident.failure_type:
+            report.update({
+                "status": "rejected",
+                "reason": (
+                    "Candidate failure_type does not match "
+                    "the supplied incident."
+                )
+            })
+            report["duration_seconds"] = perf_counter() - start
+            return report
+
         # Dependency remediation is explicitly guarded.
         if candidate["failure_type"] == "dependency_error":
             report.update({

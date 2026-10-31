@@ -23,13 +23,25 @@ The configured 60-trial labels are assigned by scenario configuration and share 
 
 `benchmarks/data/rca_locked_v1.json` contains 36 separately authored synthetic message cases. The fixture records the SHA-256 hash of `healing/rca/rule_based_rca.py`; the runner refuses to evaluate if that hash changes. The frozen implementation matched 33/36 expected root-cause codes. This set was created within the project, is not third-party blind, and is not a production accuracy estimate. Preserve this result rather than tuning on the same locked set; use a new versioned or independently authored set for future code changes.
 
-## Validator safety regression suite
+## Validator safety regression suites
 
-The current suite has 85 targeted cases: 30 valid controls, 50 deliberately unsafe proposals, and 5 dependency proposals that should be escalated. It checks selected known contracts, including action/fault compatibility, schema preservation, imputation parameters, configuration values, and approval routing. It is not a random or representative sample of real attacks.
+The earlier 85-case suite is retained as historical regression evidence: 30 valid controls, 50 deliberately unsafe proposals, and 5 dependency-escalation cases.
+
+The later expanded suite contains 205 targeted cases: 50 valid controls, 130 deliberately unsafe or mutated proposals, and 25 dependency proposals. The expected outcomes were met in all 205 cases: 50/50 valid controls passed, 130/130 unsafe or mutated proposals were blocked, and 25/25 dependency proposals were routed to human review. These are deliberately constructed regression fixtures, not random samples of operational attacks. Their observed rates do not establish general safety or security against unknown attacks.
 
 ## Policy-gate decision simulation
 
-`benchmarks/policy_gate_ablation.py` sends 36 fixed proposal records to the actual action/failure allowlist and approval function. Its bypass comparison only records whether a minimal dispatcher would hand a structurally complete proposal to a simulator. The gate permits three candidates to continue to validation, escalates five dependency candidates, and rejects 28 unsupported or mismatched proposals. The bypass would dispatch all 36; 33 are rejected or escalated by the gate. No actions execute in either arm. This tests policy-decision behavior, not end-to-end recovery causality.
+`benchmarks/policy_gate_ablation.py` sends 36 fixed proposal records to the actual action/failure allowlist and approval function. Its bypass comparison only records whether a minimal dispatcher would hand a structurally complete proposal to a simulator. The gate permits three candidates to continue to validation, escalates five dependency candidates, and rejects 28 unsupported or mismatched proposals. The bypass would dispatch all 36; 33 are rejected or escalated by the gate. No actions execute in either arm. This tests policy-decision behavior, not end-to-end recovery causality. The 2026-10-30 run also recorded four forged dependency-approval fields being overridden. No actions were executed; this remains a decision-only policy test and does not measure repair success, rollback behavior, or the causal effect of removing the gate.
+
+## V17 five-run live benchmark (2026-10-30)
+
+Five audited runs each evaluated 32 fixed templates using `rule_based_gated`, `llm_direct_isolated`, and `llm_validated`, giving 96 rows per run and 480 rows overall. Each method contributed 160 rows. Each method recovered 120/160 trials and routed 40/160 to human review. Across the 160 paired case-run units, the outcomes were identical across all three methods: 120 joint recoveries and 40 joint human-review outcomes, with zero discordant outcomes. The direct and validated LLM arms shared the same generated candidates within each paired unit.
+
+The result is an observed tie on this fixed benchmark. It does not demonstrate that the validation stage improves recovery, nor does it establish statistical equivalence between methods. The five runs reuse the same 32 project-authored templates and should not be interpreted as 160 independent operational incidents. The five audited run folders are under `research_artifacts/live_llm_v17/`.
+
+## Split-seed validation sensitivity (2026-10-30)
+
+The expanded deterministic sensitivity experiment evaluated 24 fixed project-authored templates across 20 split seeds, for 480 checks. All 480 validation checks passed, with 160 checks in each of the configuration, data-quality, and schema families. This measures validation behavior across the specified template/seed combinations; it is not an estimate of model predictive accuracy, full-pipeline LLM performance, or generalization to independent operational incidents. The raw result is `research_artifacts/2026-10-30/seed_sensitivity_v2_expanded_20261030T140025_708641Z.json`.
 
 ## Metrics and uncertainty
 
@@ -53,3 +65,29 @@ The frozen 40-case alternate-signature detector fixture was also scored against 
 The 2026-10-24 three-method raw trial set was analyzed as paired case/repeat outcomes. All three methods recovered the same 45/60 cases and shared the same 15/60 human-review outcomes; each pair had zero discordant recovery outcomes and a 0.0 percentage-point observed paired difference. This is evidence that the original experiment cannot distinguish the pathways, not evidence of equivalence. A new live-LLM run on the 32-template fixture was not possible in the current environment because no provider credentials were configured; no new LLM results are claimed.
 
 The supplementary analyzer is `benchmarks/comparative_evidence_v2.py`; its full output is `research_artifacts/2026-10-25/comparative_evidence_v2_result.json`. Raw extended trial and control records are preserved in the neighboring `rule_based_trials_expanded_v2_result.json` and `baseline_controls_expanded_v2_result.json` files. A preliminary `max_iter=0` variant did not raise under the installed environment and was replaced with the invalid non-integer string `not_an_integer` before the final 160-trial run; only the corrected final run is used in the results above.
+
+## Matched policy-gate and real-validator ablation V2 (2026-10-31)
+
+### Design
+
+The experiment uses 36 fixed, hand-crafted proposal records paired across two arms.
+
+- **Policy-gated arm:** applies the actual action/failure policy first. A policy rejection ends that proposal path in this arm. Permitted proposals proceed to the real `RepairValidator.validate()`.
+- **No-policy arm:** skips the initial policy gate and sends the same candidate proposal to the same real `RepairValidator.validate()`.
+- **Common eligibility assessment:** both arms use `RecoveryEngine.assess_recovery_eligibility()` after validation to classify proposals as blocked, eligible, or requiring human approval.
+
+No-policy therefore means bypassing the initial policy gate, not bypassing the validator or all safeguards. Dependency proposals remain subject to the validator human-review rule. The experiment never calls `RecoveryEngine.recover()` and does not execute repair actions. Data-quality validation can perform transformations and model training/evaluation inside the validator temporary workspace; this is validation work, not persistent recovery.
+
+### Results
+
+The gated arm rejected 28/36 proposals before validation. Eight reached the validator: three passed and were eligible, while five required human approval. Four forged dependency-approval flags were overridden.
+
+The no-policy arm invoked the validator for all 36 proposals. It passed three, rejected 22, and required human approval for 11. Terminal decisions agreed on 30/36 matched proposals and differed on six. All six discordances were invalid dependency actions: the gated arm blocked them, while the no-policy arm routed them to human review.
+
+The gate reduced validator invocations from 36 to eight (28 fewer; 77.8% fewer on this fixed set). This is a proposal-routing observation, not a general runtime or operational-efficiency estimate.
+
+### Interpretation and limitations
+
+This experiment supports the narrow claim that the initial policy gate rejects malformed or unsupported dependency proposals before validator review. It does not establish improved repair success, rollback behavior, prevention of real-world incidents, or security against unknown attacks. The no-policy arm retains the real validator and its safeguards; it is not an unrestricted executor. The proposals are fixed project-authored cases, not an independently sampled operational or adversarial dataset. No recovery or persistent repair execution was evaluated.
+
+The machine-readable result and provenance record are archived under `benchmarks/results/`.

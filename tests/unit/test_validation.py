@@ -207,17 +207,54 @@ def test_rejects_data_repair_if_missing_values_remain(
     )
 
 
+@pytest.mark.parametrize(
+    ("candidate_incident_id", "candidate_failure_type", "expected_reason"),
+    [
+        ("INC-OTHER", "data_quality", "incident_id"),
+        ("INC-TEST", "schema_change", "failure_type"),
+    ],
+)
+def test_validator_rejects_candidate_identity_mismatch(
+    candidate_incident_id,
+    candidate_failure_type,
+    expected_reason,
+):
+    validator = make_validator()
+
+    candidate = {
+        "candidate_id": "RC-CROSS-INCIDENT",
+        "incident_id": candidate_incident_id,
+        "failure_type": candidate_failure_type,
+        "action": "impute_missing_values",
+        "parameters": {},
+    }
+
+    incident = SimpleNamespace(
+        incident_id="INC-TEST",
+        failure_type="data_quality",
+    )
+
+    report = validator.validate(candidate, incident)
+
+    assert report["status"] == "rejected"
+    assert expected_reason in report["reason"]
+    assert report["candidate_id"] == candidate["candidate_id"]
+    assert report["incident_id"] == incident.incident_id
+
+
 def test_dependency_repair_requires_human_approval():
     validator = make_validator()
 
     candidate = {
         "candidate_id": "RC-TEST",
+        "incident_id": "INC-TEST",
         "failure_type": "dependency_error",
         "action": "verify_dependency"
     }
 
     incident = SimpleNamespace(
-        incident_id="INC-TEST"
+        incident_id="INC-TEST",
+        failure_type="dependency_error",
     )
 
     report = validator.validate(candidate, incident)

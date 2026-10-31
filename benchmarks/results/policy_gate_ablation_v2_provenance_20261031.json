@@ -1,0 +1,39 @@
+{
+  "experiment": "policy_gate_ablation_v2",
+  "provenance_captured_at": "2026-10-31T14:50:00.973217+05:30",
+  "execution_command": "PYTHONDONTWRITEBYTECODE=1 python -B -m benchmarks.policy_gate_ablation_v2 --output /tmp/policy_gate_ablation_v2_full_20261031.json",
+  "result_file": "benchmarks/results/policy_gate_ablation_v2_20261031.json",
+  "result_sha256": "f2bf81ff563a583e781edcccb25421f26a1eecb3e2a08e5db65bcf68c0236a57",
+  "git_head_at_provenance_capture": "807a9471a23da437e2a38f59056b1235ac4aeaae",
+  "git_status_at_provenance_capture": "M README.md\n M docs/experiments.md\n M docs/methodology.md\n M docs/research_notes.md\n M healing/recovery/recovery_engine.py\n M healing/validation/repair_validator.py\n M tests/integration/test_healing_loop.py\n M tests/unit/test_validation.py\n M tools/release_preflight.py\n?? benchmarks/._policy_gate_ablation_v2.py\n?? benchmarks/data/rca_external_source_screening_v2.csv\n?? benchmarks/data/rca_public_resolution_pilot_v1.json\n?? benchmarks/data/rca_public_resolution_pilot_v1.sha256\n?? benchmarks/policy_gate_ablation_v2.py\n?? benchmarks/public_resolution_rca_pilot.py\n?? docs/rca_public_resolution_pilot_v1.md\n?? healing/recovery/._recovery_engine.py\n?? research_artifacts/2026-10-30/\n?? research_artifacts/handoffs/\n?? tests/unit/._test_policy_gate_ablation_v2.py\n?? tests/unit/._test_recovery_eligibility.py\n?? tests/unit/test_policy_gate_ablation_v2.py\n?? tests/unit/test_recovery_eligibility.py\n?? tests/unit/test_release_preflight.py",
+  "python_version": "3.13.15 (v3.13.15:4061bc4c35f, Aug  5 2026, 09:08:51) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "source_sha256": {
+    "benchmarks/policy_gate_ablation.py": "dac3589da58ef98d4e2bc75a379b7091508f00fb1f34aa80a994de218689b7f4",
+    "benchmarks/policy_gate_ablation_v2.py": "1d2b99a603c148299b8d744403d9bdcb5c218b960120071e6bc292b4ba27da55",
+    "configs/failures.yaml": "abd5b98252356fd6e7e6a5398af2a76e626e233d4bf60197a599f17531aa4d95",
+    "configs/pipeline.yaml": "ddab528c8e15520afd4cfafc15497a322ab87f980c6ccc2f17abd8bc4bd0574d",
+    "healing/recovery/recovery_engine.py": "aaba90fe7e7e80c002e1b7242ea8efd0605c57bf5c06d2a1eb41003e9160a5e4",
+    "healing/repair/repair_policy.py": "8d27454f9022f7f63565444e82c70b446272665a82d07086444d4f5c97dac72a",
+    "healing/validation/repair_validator.py": "480a020694571ee22302f877b6cc6a26236abd573c93940e8185d4f437a5b14b",
+    "tests/unit/test_policy_gate_ablation_v2.py": "15b6a73c68907c205b119337ae698ef23ec76ee3dab3b36ae328eeb28db74d48",
+    "tests/unit/test_recovery_eligibility.py": "343b7d140e029887f405d3700435e36ee5c2adf00901977b3beeef55dfac4fab"
+  },
+  "verified_result_invariants": {
+    "cases": 36,
+    "policy_gated_policy_rejections": 28,
+    "policy_gated_validator_invocations": 8,
+    "no_policy_validator_invocations": 36,
+    "paired_agreement": 30,
+    "paired_discordances": 6,
+    "discordant_case_ids": [
+      "mismatch_dependency_error_impute_missing_values",
+      "mismatch_dependency_error_rename_column",
+      "mismatch_dependency_error_restore_configuration",
+      "unsupported_dependency_error_execute_python",
+      "unsupported_dependency_error_install_package",
+      "unsupported_dependency_error_run_shell_command"
+    ],
+    "recovery_execution_calls": 0
+  }
+}

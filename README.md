@@ -62,7 +62,7 @@ The `openai==3.20.0` extra is pinned, but a live API/provider integration could 
 python -m pytest -q
 ```
 
-`pytest.ini` confines automated test discovery to `tests/`. Files under `scripts/` named `test_*.py` are manual demos that may call external services and are not pytest test modules. The current offline test run for this upgraded base snapshot completed with **129 passed** in Python 3.13.5. The suite includes a contract check for the active 32-case/four-family fixture, the 34-case family-classification regression fixture, quota/retry/capture-accounting tests, checks against ground-truth leakage and ambiguous `KeyError` handling, and LLM-run manifest/endpoint-redaction tests. It does not exercise live LLM API calls.
+`pytest.ini` confines automated test discovery to `tests/`. Files under `scripts/` named `test_*.py` are manual demos that may call external services and are not pytest test modules. The latest local offline test run for this checkout completed with **155 passed** in Python 3.13.15. The suite includes a contract check for the active 32-case/four-family fixture, the 34-case family-classification regression fixture, quota/retry/capture-accounting tests, checks against ground-truth leakage and ambiguous `KeyError` handling, and LLM-run manifest/endpoint-redaction tests. It does not exercise live LLM API calls.
 
 ### Re-run the deterministic gated baseline (no API call)
 
@@ -200,6 +200,14 @@ The expanded, programmatically generated suite covered 205 targeted cases:
 
 These are targeted regression fixtures, not representative samples from an operational attack distribution. The rates do not establish general safety; the cases were deliberately constructed to target known guardrails and are not random samples of production proposals.
 
+### Five-run V17 live benchmark (2026-10-30)
+
+The audited five-run benchmark used 32 fixed templates and three methods per run (96 rows per run; 480 rows overall; 160 rows per method). Each method recovered 120/160 trials (75%) and routed 40/160 to human review. Across the 160 paired case-run units, all three methods had identical outcomes: 120 joint recoveries and 40 joint human-review outcomes, with zero discordant outcomes. The direct-LLM and validated-LLM arms shared the same generated candidate within each paired unit. This observed tie does not establish equivalence or show that validation has no value; it shows no outcome difference on this fixed test set. The five runs reuse the same 32 templates and are not 160 independent operational incidents.
+
+### Split-seed validation sensitivity (2026-10-30)
+
+A separate deterministic experiment covered 24 project-authored templates over 20 split seeds (480 checks, 160 per fault family). All 480 validation checks passed. This is a fixed-template validation result, not 480 independent operational incidents, a new model-accuracy estimate, or a full-pipeline LLM comparison. The raw result is `research_artifacts/2026-10-30/seed_sensitivity_v2_expanded_20261030T140025_708641Z.json`.
+
 ### Public-issue-source RCA probe (exploratory; no API call)
 
 Run:
@@ -308,3 +316,22 @@ python tools/release_preflight.py --output research_artifacts/release_preflight_
 ```
 
 The command also runs the test suite unless `--skip-tests` is specified. Read the emitted JSON and address any nonzero result before tagging. A ZIP archive does not include Git history; follow [`RELEASE_TO_GITHUB_V16.md`](RELEASE_TO_GITHUB_V16.md) from an existing clone to create an actual commit and tag. The original October 24 LLM run has no recorded Git commit SHA, so a newly created release tag does not retroactively prove which commit ran that experiment.
+
+## Matched policy-gate and real-validator ablation V2 (2026-10-31)
+
+### Reproduction
+
+Run the matched 36-proposal comparison using the real validator in both arms. No recovery is executed.
+
+`PYTHONDONTWRITEBYTECODE=1 python -B -m benchmarks.policy_gate_ablation_v2 --output /tmp/policy_gate_ablation_v2_reproduction.json`
+
+Archived result: `benchmarks/results/policy_gate_ablation_v2_20261031.json`.
+Provenance: `benchmarks/results/policy_gate_ablation_v2_provenance_20261031.json`.
+
+### Findings
+
+The policy-gated arm rejected 28 proposals before validation; eight reached the validator (three passed and five required human review). Without the initial gate, all 36 reached the same validator (three passed, 22 were rejected, and 11 required human review). Four forged dependency-approval flags were overridden in the gated arm.
+
+Terminal decisions agreed on 30 of 36 proposals. The six discordances were invalid dependency actions: blocked by the gate but routed to human review without it. The gate reduced validator invocations by 28 (77.8%) on this constructed set.
+
+The no-policy arm bypassed only the initial policy gate; validator checks and dependency human-review requirements remained active. Neither arm executed recovery. These results measure proposal filtering and validator routing, not end-to-end repair effectiveness or general security.
